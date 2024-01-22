@@ -14,9 +14,15 @@ config/name="TrashCan"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Accaunt="*res://script/Accaunt.gd"
+Globals="*res://script/Globals.gd"
+
 [display]
 
-window/size/viewport_width=1280
+window/size/viewport_width=720
+window/size/viewport_height=1280
 
 [rendering]
 
