@@ -1,7 +1,7 @@
 extends Node
 
-var login : String
-var password : String
-var firstName : String
-var LastName : String
-var mail : String
+var login = "Admin"
+var password = "12345678"
+var firstName = "Иван"
+var LastName = "Иванов"
+var mail = "example@male.ru"
