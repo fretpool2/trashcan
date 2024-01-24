@@ -25,6 +25,26 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 72
 
+[node name="Label" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Label"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -11.5
+offset_right = 140.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = "Все поля должны быть заполнены!"
+
 [node name="Login" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -43,7 +63,7 @@ offset_right = 150.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-placeholder_text = "Login"
+placeholder_text = "Login*"
 
 [node name="Pass" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -63,10 +83,9 @@ offset_right = 150.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-placeholder_text = "Password"
+placeholder_text = "Password*"
 
 [node name="Pass2" type="Control" parent="MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -84,7 +103,7 @@ offset_right = 150.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-placeholder_text = "Password"
+placeholder_text = "Password*"
 
 [node name="Fnaim" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -104,7 +123,7 @@ offset_right = 150.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-placeholder_text = "First Name"
+placeholder_text = "First Name*"
 
 [node name="LName" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -124,7 +143,7 @@ offset_right = 150.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-placeholder_text = "Last Name"
+placeholder_text = "Last Name*"
 
 [node name="mail" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -144,7 +163,7 @@ offset_right = 150.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-placeholder_text = "Mail"
+placeholder_text = "Mail*"
 
 [node name="pustota" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
