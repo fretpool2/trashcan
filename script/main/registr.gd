@@ -11,7 +11,7 @@ var reg = false
 
 # Добавьте функцию проверки на электронный адрес
 func isEmailValid(email: String) -> bool:
-	var pattern = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$"
+	var pattern = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
 	var regex = RegEx.new()
 	regex.compile(pattern)
 	return regex.search(email) != null
@@ -26,6 +26,10 @@ func _on_button_pressed():
 	elif passw.text != pasw_2.text:
 		label.text = "Пароль не совпадает"
 		label.show()
+	elif passw.length() < 4:
+		label.text = "Пароль должен состоять не менее 4 символов"
+		label.show()
+		pass
 	else:
 		label.hide()
 		reg = true
