@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfkypqauofras"]
+
+[ext_resource type="Script" path="res://script/profile/SetingsProfile.gd" id="1_348tn"]
+
+[node name="SetingProf" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_348tn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="changeName" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="changeName" type="LineEdit" parent="MarginContainer/VBoxContainer/changeName"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 22.0
+offset_right = 321.0
+offset_bottom = 72.0
+placeholder_text = "изменить ФИО"
+
+[node name="save" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="saveName" type="Button" parent="MarginContainer/VBoxContainer/save"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 97.0
+offset_right = 111.0
+offset_bottom = 128.0
+size_flags_horizontal = 0
+text = "Сохранить"
+
+[node name="changePasword" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="changePasword" type="LineEdit" parent="MarginContainer/VBoxContainer/changePasword"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 145.0
+offset_right = 324.0
+offset_bottom = 194.0
+placeholder_text = "Изменить пароль"
+
+[node name="save2" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="savePasword" type="Button" parent="MarginContainer/VBoxContainer/save2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 206.0
+offset_right = 111.0
+offset_bottom = 237.0
+text = "Сохранить"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/save/saveName" to="." method="_on_save_name_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/save2/savePasword" to="." method="_on_save_pasword_pressed"]

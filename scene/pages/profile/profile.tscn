@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b17dfxcta4ch5"]
 
-[ext_resource type="Script" path="res://scene/pages/profile/profile.gd" id="1_8a8mo"]
+[ext_resource type="Script" path="res://script/profile/profile.gd" id="1_8a8mo"]
 [ext_resource type="PackedScene" uid="uid://c1ix7mdunipu4" path="res://scene/Itoms/photo.tscn" id="2_6mheg"]
 
 [node name="Profile" type="Control"]
@@ -44,6 +44,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "mail"
 
+[node name="seting" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "настройки профиля"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -61,3 +66,5 @@ size_flags_vertical = 0
 [node name="Photo" parent="MarginContainer/HBoxContainer/photos" instance=ExtResource("2_6mheg")]
 layout_mode = 1
 scale = Vector2(2, 2)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/seting" to="." method="_on_seting_pressed"]
