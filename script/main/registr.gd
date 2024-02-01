@@ -26,10 +26,9 @@ func _on_button_pressed():
 	elif passw.text != pasw_2.text:
 		label.text = "Пароль не совпадает"
 		label.show()
-	elif passw.length() < 4:
-		label.text = "Пароль должен состоять не менее 4 символов"
+	elif pasw_2.text != passw.text:
+		label.text = "Пароль не совпадает"
 		label.show()
-		pass
 	else:
 		label.hide()
 		reg = true
@@ -43,4 +42,5 @@ func _on_button_pressed():
 		Accaunt.firstName = first_name.text
 		Accaunt.lastName = last_name.text
 		Accaunt.mail = gmail.text
+		Accaunt.save_acc_data()
 		get_tree().change_scene_to_file("res://scene/main/main.tscn")

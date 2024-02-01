@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://coxugbhmyuux5"]
+
+[ext_resource type="Script" path="res://scene/test/ya_map/test.gd" id="1_clw8t"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_clw8t")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 193.0
+offset_bottom = 151.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 359.0
+offset_right = 717.0
+offset_bottom = 286.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
