@@ -1,15 +1,18 @@
 extends Control
 
-
 @onready var changeName = $MarginContainer/VBoxContainer/changeName/changeName
-@onready var changePasword = $MarginContainer/VBoxContainer/changePasword/changePasword
+@onready var changePassword = $MarginContainer/VBoxContainer/changePasword/changePasword
+@onready var lastName = $MarginContainer/VBoxContainer/lastName/lastName
 
-
-func _on_save_name_pressed():
-	Accaunt.firstName = changeName
-	
 
 
 func _on_save_pasword_pressed():
-	Accaunt.password = changePasword
-	print(Accaunt.password)
+	Accaunt.password = changePassword.text
+	Accaunt.firstName = changeName.text
+	Accaunt.lastName = lastName.text
+	
+
+
+
+func _on_exit_pressed():
+	get_tree().change_scene_to_file("res://scene/pages/MainMenu/main_menu.tscn")
