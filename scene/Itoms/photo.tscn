@@ -5,9 +5,8 @@
 [node name="Photo" type="Control"]
 layout_mode = 3
 anchor_right = 0.056
-anchor_bottom = 0.031
+anchor_bottom = 0.04
 offset_right = -0.32
-offset_bottom = 0.32
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -16,23 +15,23 @@ script = ExtResource("1_xfu3q")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -64.0
+offset_bottom = 64.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -64.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 29
+theme_override_font_sizes/font_size = 45
 text = "N"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -64.0
+offset_bottom = 64.0
 flat = true
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

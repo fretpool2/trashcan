@@ -5,20 +5,7 @@ func _ready():
 		self.pressed.connect("_on_button_pressed")
 
 func _on_button_pressed():
-	OS.create_process("C:\\Program Files\\Notepad++\\notepad++.exe", [], true)
+	OS.shell_show_in_file_manager("Folder", true)
 	pass
 
-
-	
-func _on_file_selected(path):
-	var texture = ImageTexture.new()
-
-	if texture.load(path) == OK:
-		self.texture_normal = texture
-		self.texture_pressed = texture
-	else:
-		print("Failed to load image: ", path)
-
-func _on_dir_selected(path):
-	print("Selected directory: ", path)
 
