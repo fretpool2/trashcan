@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5v8c3b10mdnw"]
+
+[ext_resource type="Script" path="res://lut_bals.gd" id="1_h4nrg"]
+
+[node name="lut_bals" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h4nrg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="vibor" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="vibor" type="Button" parent="MarginContainer/VBoxContainer/vibor"]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 96.0
+offset_right = 272.0
+offset_bottom = 159.0
+text = "выбрать пункт"
+
+[node name="next" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Next" type="Button" parent="MarginContainer/VBoxContainer/next"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 844.0
+offset_right = 592.0
+offset_bottom = 923.0
+text = "далее
+"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/vibor/vibor" to="." method="_on_vibor_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/next/Next" to="." method="_on_next_pressed"]

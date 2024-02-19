@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfkypqauofras"]
+[gd_scene load_steps=3 format=3 uid="uid://cfkypqauofras"]
 
 [ext_resource type="Script" path="res://script/profile/SetingsProfile.gd" id="1_348tn"]
+[ext_resource type="Texture2D" uid="uid://c3faf0cljulst" path="res://picture/pngwing.com (1).png" id="2_jytnj"]
 
 [node name="SetingProf" type="Control"]
 layout_mode = 3
@@ -25,45 +26,56 @@ layout_mode = 2
 
 [node name="changeName" type="LineEdit" parent="MarginContainer/VBoxContainer/changeName"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 22.0
-offset_right = 321.0
-offset_bottom = 72.0
-placeholder_text = "изменить ФИО"
-
-[node name="save" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="saveName" type="Button" parent="MarginContainer/VBoxContainer/save"]
-layout_mode = 2
 offset_left = 16.0
-offset_top = 97.0
-offset_right = 111.0
-offset_bottom = 128.0
-size_flags_horizontal = 0
-text = "Сохранить"
+offset_top = 16.0
+offset_right = 325.0
+offset_bottom = 66.0
+placeholder_text = "Изменить Имя"
 
 [node name="changePasword" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="changePasword" type="LineEdit" parent="MarginContainer/VBoxContainer/changePasword"]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 145.0
-offset_right = 324.0
-offset_bottom = 194.0
+offset_left = 16.0
+offset_top = 156.0
+offset_right = 327.0
+offset_bottom = 205.0
 placeholder_text = "Изменить пароль"
 
-[node name="save2" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="save" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="savePasword" type="Button" parent="MarginContainer/VBoxContainer/save2"]
+[node name="savePasword" type="Button" parent="MarginContainer/VBoxContainer/save"]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 206.0
+offset_top = 224.0
 offset_right = 111.0
-offset_bottom = 237.0
+offset_bottom = 255.0
 text = "Сохранить"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/save/saveName" to="." method="_on_save_name_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/save2/savePasword" to="." method="_on_save_pasword_pressed"]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="exit" type="Button" parent="MarginContainer/VBoxContainer/Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 268.0
+offset_right = 4120.0
+offset_bottom = 4372.0
+scale = Vector2(0.0231567, 0.0228292)
+icon = ExtResource("2_jytnj")
+
+[node name="lastName" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="lastName" type="LineEdit" parent="MarginContainer/VBoxContainer/lastName"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 72.0
+offset_right = 328.0
+offset_bottom = 120.0
+placeholder_text = "Изменить Фамилию"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/save/savePasword" to="." method="_on_save_pasword_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/exit" to="." method="_on_exit_pressed"]
