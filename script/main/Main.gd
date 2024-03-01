@@ -1,6 +1,6 @@
 extends Control
-var scenePath = "res://scene/pages/MainMenu/main_menu.tscn"
-var sceneLoadResult = load(scenePath)
+#var scenePath = "res://scene/pages/MainMenu/main_menu.tscn"
+#var sceneLoadResult = load(scenePath)
 func _process(_delta):
 	if Accaunt.signin:
 		get_tree().change_scene_to_file("res://scene/pages/MainMenu/main_menu.tscn")

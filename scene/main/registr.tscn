@@ -37,12 +37,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -11.5
-offset_right = 140.0
-offset_bottom = 11.5
+offset_left = -208.0
+offset_top = 620.0
+offset_right = 201.0
+offset_bottom = 652.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
 text = "Все поля должны быть заполнены!"
 
@@ -224,10 +225,10 @@ layout_mode = 2
 
 [node name="an acc" type="Button" parent="MarginContainer/VBoxContainer/an acc"]
 layout_mode = 0
-offset_left = -408.0
-offset_top = -124.0
-offset_right = -216.0
-offset_bottom = -92.0
+offset_left = -97.0
+offset_top = -96.0
+offset_right = 95.0
+offset_bottom = -44.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Buton/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/an acc/an acc" to="." method="_on_an_acc_pressed"]
