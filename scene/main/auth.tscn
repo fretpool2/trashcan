@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2gaexnws7lpp"]
+[gd_scene load_steps=3 format=3 uid="uid://c2gaexnws7lpp"]
 
 [ext_resource type="Script" path="res://script/main/auth.gd" id="1_ae720"]
+[ext_resource type="Texture2D" uid="uid://bmdr4hqcjvydl" path="res://picture/a623e097-3a3f-4d71-86b4-fb19acdf2365.png" id="2_ycasr"]
 
 [node name="Auth" type="Control"]
 layout_mode = 3
@@ -57,13 +58,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -40.0
-offset_right = 150.0
-offset_bottom = 40.0
+offset_left = -152.0
+offset_top = 168.0
+offset_right = 148.0
+offset_bottom = 248.0
 grow_horizontal = 2
 grow_vertical = 2
-placeholder_text = "LOGIN"
+placeholder_text = "Логин"
 virtual_keyboard_type = 4
 
 [node name="Password" type="Control" parent="MarginContainer/VBoxContainer"]
@@ -76,13 +77,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -40.0
-offset_right = 150.0
-offset_bottom = 40.0
+offset_left = -152.0
+offset_top = 160.0
+offset_right = 148.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
-placeholder_text = "PASSWORD"
+placeholder_text = "Пароль"
 max_length = 18
 virtual_keyboard_type = 4
 
@@ -96,19 +97,66 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -30.0
-offset_right = 60.0
-offset_bottom = 30.0
+offset_left = -128.0
+offset_top = 160.0
+offset_right = 128.0
+offset_bottom = 216.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Login In"
+icon = ExtResource("2_ycasr")
 expand_icon = true
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="text let start" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Back"
-expand_icon = true
+
+[node name="let start" type="Label" parent="MarginContainer/VBoxContainer/text let start"]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -372.0
+offset_right = 133.0
+offset_bottom = -317.0
+theme_override_font_sizes/font_size = 31
+text = "Давайте начнём!"
+horizontal_alignment = 1
+
+[node name="text syst" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="text syst" type="Label" parent="MarginContainer/VBoxContainer/text syst"]
+layout_mode = 0
+offset_left = -152.0
+offset_top = -420.0
+offset_right = 136.0
+offset_bottom = -348.0
+theme_override_font_sizes/font_size = 16
+text = "Войдите в систему, чтобы получить доступ к приложению"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="text no acc" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="text no acc" type="Label" parent="MarginContainer/VBoxContainer/text no acc"]
+layout_mode = 0
+offset_left = -104.0
+offset_top = 132.0
+offset_right = 120.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 18
+text = "Ещё нет аккаунта? Зарегистрируйся здесь!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="no acc" type="Control" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="no acc" type="Button" parent="MarginContainer/VBoxContainer/no acc"]
+layout_mode = 0
+offset_left = -88.0
+offset_top = 20.0
+offset_right = 112.0
+offset_bottom = 60.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/no acc/no acc" to="." method="_on_no_acc_pressed"]

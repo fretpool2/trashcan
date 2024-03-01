@@ -44,3 +44,7 @@ func _on_button_pressed():
 		Accaunt.mail = gmail.text
 		Accaunt.save_acc_data()
 		get_tree().change_scene_to_file("res://scene/main/main.tscn")
+
+
+func _on_an_acc_pressed():
+	get_tree().change_scene_to_file("res://scene/main/auth.tscn")

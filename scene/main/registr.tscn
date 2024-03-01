@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlc4ttb3bf168"]
+[gd_scene load_steps=3 format=3 uid="uid://dlc4ttb3bf168"]
 
 [ext_resource type="Script" path="res://script/main/registr.gd" id="1_cg27n"]
+[ext_resource type="Texture2D" uid="uid://cwyqeytggma5b" path="res://picture/3dfbdac2-11d8-48c2-83b4-fcc37f53d4ca.png" id="2_rytnx"]
 
 [node name="Registr" type="Control"]
 layout_mode = 3
@@ -57,10 +58,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -30.0
-offset_right = 150.0
-offset_bottom = 30.0
+offset_left = -152.0
+offset_top = 76.0
+offset_right = 148.0
+offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Login*"
@@ -77,10 +78,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -30.0
-offset_right = 150.0
-offset_bottom = 30.0
+offset_left = -152.0
+offset_top = 84.0
+offset_right = 148.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Password*"
@@ -97,10 +98,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -30.0
-offset_right = 150.0
-offset_bottom = 30.0
+offset_left = -152.0
+offset_top = 92.0
+offset_right = 148.0
+offset_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Password*"
@@ -117,10 +118,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -30.0
-offset_right = 150.0
-offset_bottom = 30.0
+offset_left = -152.0
+offset_top = 100.0
+offset_right = 148.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "First Name*"
@@ -137,10 +138,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -30.0
-offset_right = 150.0
-offset_bottom = 30.0
+offset_left = -152.0
+offset_top = 108.0
+offset_right = 148.0
+offset_bottom = 168.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Last Name*"
@@ -152,17 +153,10 @@ size_flags_vertical = 4
 
 [node name="mail" type="LineEdit" parent="MarginContainer/VBoxContainer/mail"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -30.0
-offset_right = 150.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -152.0
+offset_top = 116.0
+offset_right = 148.0
+offset_bottom = 176.0
 placeholder_text = "Mail*"
 
 [node name="pustota" type="Control" parent="MarginContainer/VBoxContainer"]
@@ -178,12 +172,62 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -30.0
-offset_right = 60.0
-offset_bottom = 30.0
+offset_left = -136.0
+offset_top = 84.0
+offset_right = 137.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Registr"
+icon = ExtResource("2_rytnx")
+
+[node name="text join" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="text join" type="Label" parent="MarginContainer/VBoxContainer/text join"]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -644.0
+offset_right = 143.0
+offset_bottom = -602.0
+theme_override_font_sizes/font_size = 30
+text = "Присоединяйтесь!"
+
+[node name="text syst" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="text syst" type="Label" parent="MarginContainer/VBoxContainer/text syst"]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -660.0
+offset_right = 135.0
+offset_bottom = -597.0
+text = "Войдите в систему, чтобы получить доступ к приложению"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="text an acc" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="text an acc" type="Label" parent="MarginContainer/VBoxContainer/text an acc"]
+layout_mode = 0
+offset_left = -104.0
+offset_top = -28.0
+offset_right = 104.0
+offset_bottom = 21.0
+text = "У вас уже есть аккаунт? Войдите здесь!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="an acc" type="Control" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="an acc" type="Button" parent="MarginContainer/VBoxContainer/an acc"]
+layout_mode = 0
+offset_left = -408.0
+offset_top = -124.0
+offset_right = -216.0
+offset_bottom = -92.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Buton/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/an acc/an acc" to="." method="_on_an_acc_pressed"]

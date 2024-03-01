@@ -30,5 +30,6 @@ func _on_button_pressed():
 		print("False")
 	check()
 
-func _on_back_pressed():
-	get_tree().change_scene_to_file("res://scene/main/main.tscn")
+
+func _on_no_acc_pressed():
+	get_tree().change_scene_to_file("res://scene/main/registr.tscn")

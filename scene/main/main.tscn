@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd7l56dhygef6"]
+[gd_scene load_steps=5 format=3 uid="uid://bd7l56dhygef6"]
 
 [ext_resource type="Script" path="res://script/main/Main.gd" id="1_y6raa"]
+[ext_resource type="Texture2D" uid="uid://bmdr4hqcjvydl" path="res://picture/a623e097-3a3f-4d71-86b4-fb19acdf2365.png" id="2_kltmv"]
+[ext_resource type="Texture2D" uid="uid://cwyqeytggma5b" path="res://picture/3dfbdac2-11d8-48c2-83b4-fcc37f53d4ca.png" id="3_6jo7h"]
+[ext_resource type="Texture2D" uid="uid://crl08r6dyphih" path="res://picture/ffeb31e8-de93-44d8-b797-70fad82baa5b.png" id="4_uroam"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -34,15 +37,50 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="loginin" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Login In"
 
-[node name="reg" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+[node name="loginin" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/Control"]
 layout_mode = 2
+offset_left = -57.0
+offset_top = 52.0
+offset_right = 216.0
+offset_bottom = 108.0
 theme_override_font_sizes/font_size = 50
-text = "Registr"
+icon = ExtResource("2_kltmv")
 
-[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/loginin" to="." method="_on_loginin_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/reg" to="." method="_on_reg_pressed"]
+[node name="Control2" type="Control" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="reg" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/Control2"]
+layout_mode = 2
+offset_left = -57.0
+offset_top = 128.0
+offset_right = 216.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("3_6jo7h")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Добро пожаловать!"
+
+[node name="Ffeb31e8-de93-44d8-b797-70Fad82Baa5b" type="Sprite2D" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+position = Vector2(71, -212)
+scale = Vector2(1.93396, 1.78302)
+texture = ExtResource("4_uroam")
+
+[node name="Control3" type="Control" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/Control3"]
+layout_mode = 2
+offset_left = -9.0
+offset_top = -165.0
+offset_right = 149.0
+offset_bottom = -142.0
+text = "GreenCycle"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/Control/loginin" to="." method="_on_loginin_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/Control2/reg" to="." method="_on_reg_pressed"]
