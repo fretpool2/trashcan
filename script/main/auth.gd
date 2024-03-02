@@ -16,7 +16,7 @@ func check():
 		
 	if falseAcc == true and pas.text != "" and log.text != "":
 		check_pole.show()
-		label.text = "Не правленый логин или пароль"
+		label.text = "Неправильный логин или пароль"
 		pass
 
 func _on_button_pressed():
@@ -25,6 +25,7 @@ func _on_button_pressed():
 		print("Logining")
 		Accaunt.signin = true
 		get_tree().change_scene_to_file("res://scene/pages/MainMenu/main_menu.tscn")
+		Accaunt.save_acc_data()
 	else:
 		falseAcc = true
 		print("False")
