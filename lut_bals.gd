@@ -1,12 +1,9 @@
 extends Control
 
 
+@onready var label = $Label
+@onready var label_2 = $Label2
 
-
-
-func _on_vibor_pressed():
-	pass
-
-func _on_next_pressed():
-	pass
-	
+func _ready():
+	label.text = Ifotrash.names
+	label_2.text = Ifotrash.adres

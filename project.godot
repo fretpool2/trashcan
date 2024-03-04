@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Accaunt="*res://script/Accaunt.gd"
 Globals="*res://script/Globals.gd"
+Ifotrash="*res://script/ifotrash.gd"
 
 [display]
 

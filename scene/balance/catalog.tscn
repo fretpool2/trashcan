@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://mrmh677tkfm5"]
+[gd_scene load_steps=3 format=3 uid="uid://mrmh677tkfm5"]
 
 [ext_resource type="Script" path="res://script/balance/catalog.gd" id="1_t0i18"]
+[ext_resource type="PackedScene" uid="uid://b72y1hwvaa43l" path="res://scene/Itoms/card_adres.tscn" id="2_7e0eb"]
 
 [node name="Catalog" type="Control"]
 layout_mode = 3
@@ -19,13 +20,47 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Control" type="Control" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+offset_left = 254.0
+offset_top = 171.0
+offset_right = 513.0
+offset_bottom = 344.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 
-[node name="PopupMenu" type="PopupMenu" parent="MarginContainer/VBoxContainer/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
 
-[connection signal="id_pressed" from="MarginContainer/VBoxContainer/Control/PopupMenu" to="." method="_on_popup_menu_id_pressed"]
-[connection signal="index_pressed" from="MarginContainer/VBoxContainer/Control/PopupMenu" to="." method="_on_popup_menu_index_pressed"]
+[node name="adres" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 78
+
+[node name="card_adres" parent="ScrollContainer/VBoxContainer/HBoxContainer/adres" instance=ExtResource("2_7e0eb")]
+layout_mode = 2
+Main = "Экс Про Лит"
+adress = "Москва, Северный административный округ, район Беговой"
+
+[node name="card_adres2" parent="ScrollContainer/VBoxContainer/HBoxContainer/adres" instance=ExtResource("2_7e0eb")]
+layout_mode = 2
+Main = "Фандомат Ecoplatform"
+adress = "М,Павелецкая площадь, 1А, стр. 1"
+
+[node name="card_adres3" parent="ScrollContainer/VBoxContainer/HBoxContainer/adres" instance=ExtResource("2_7e0eb")]
+layout_mode = 2
+Main = "Ecoplatform"
+adress = "М,Комсомольская площадь, 5, стр. 4"
+
+[node name="card_adres4" parent="ScrollContainer/VBoxContainer/HBoxContainer/adres" instance=ExtResource("2_7e0eb")]
+layout_mode = 2
+Main = "Мегабак"
+adress = "М.О, Красногорск, квартал Коммунальный"
+
+[node name="air" type="Control" parent="ScrollContainer/VBoxContainer/HBoxContainer/adres"]
+layout_mode = 2

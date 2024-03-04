@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://b72y1hwvaa43l"]
+
+[ext_resource type="Script" path="res://script/items/card_adres.gd" id="1_quteg"]
+
+[node name="card_adres" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -469.0
+offset_bottom = -941.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_quteg")
+Main = "asd"
+adress = "asd"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 60.0
+color = Color(0, 0.643137, 0.333333, 0.45098)
+
+[node name="Main_name" type="Label" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 31.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="adres" type="Label" parent="."]
+layout_mode = 0
+offset_top = 37.0
+offset_right = 250.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.309804, 0.309804, 0.309804, 1)
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 247.0
+offset_bottom = 57.0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
