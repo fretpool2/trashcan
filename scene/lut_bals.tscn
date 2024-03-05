@@ -17,6 +17,7 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = 165.0
 offset_bottom = 112.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
@@ -24,3 +25,4 @@ offset_left = 64.0
 offset_top = 128.0
 offset_right = 165.0
 offset_bottom = 176.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)

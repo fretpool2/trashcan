@@ -26,8 +26,10 @@ Ifotrash="*res://script/ifotrash.gd"
 window/size/viewport_width=720
 window/size/viewport_height=1000
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.678431, 0.690196, 0.686275, 1)

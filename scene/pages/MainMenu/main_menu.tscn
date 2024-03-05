@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd2mi3i5c6sb5"]
+[gd_scene load_steps=6 format=3 uid="uid://cd2mi3i5c6sb5"]
 
 [ext_resource type="Script" path="res://script/main_menu/main_menu.gd" id="1_8r7xq"]
 [ext_resource type="PackedScene" uid="uid://c1ix7mdunipu4" path="res://scene/Itoms/photo.tscn" id="2_5mt5g"]
-[ext_resource type="Texture2D" uid="uid://cedwo1r2gcpce" path="res://picture/Coins-PNG-Clip-Art-HD-Quality.png" id="4_mr54b"]
+[ext_resource type="Texture2D" uid="uid://efe4hhrxrrcl" path="res://picture/down_panel.png" id="3_vwkxu"]
+[ext_resource type="Texture2D" uid="uid://b183xu35jcimr" path="res://picture/icons8-ecology-50.png" id="4_r4xuy"]
+[ext_resource type="Texture2D" uid="uid://duhfbt5sdm72" path="res://picture/icons8-wallet-50.png" id="5_4c36h"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -27,6 +29,7 @@ theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = -29
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -35,38 +38,38 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 950
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Control"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = -685.0
-offset_top = 846.0
-offset_right = 35.0
-offset_bottom = 950.0
-color = Color(0.141176, 0.141176, 0.141176, 0.823529)
+size_flags_horizontal = 4
+size_flags_vertical = 10
+texture = ExtResource("3_vwkxu")
+expand_mode = 5
+stretch_mode = 3
 
-[node name="lut_ball" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TextureRect"]
 layout_mode = 2
+offset_left = -325.0
+offset_top = -29.0
+offset_right = 325.0
+offset_bottom = 29.0
+size_flags_vertical = 8
+theme_override_constants/separation = 21
 
-[node name="lut_ball" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/lut_ball"]
-layout_mode = 0
-offset_left = -645.0
-offset_top = 862.0
-offset_right = -537.0
-offset_bottom = 970.0
-scale = Vector2(0.68, 0.640005)
-
-[node name="balance" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="lut_ball" type="Button" parent="MarginContainer/VBoxContainer/TextureRect/HBoxContainer2"]
 layout_mode = 2
+icon = ExtResource("4_r4xuy")
+flat = true
 
-[node name="balance" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/balance"]
-layout_mode = 0
-offset_left = -557.0
-offset_top = 862.0
-offset_right = 360.0
-offset_bottom = 1908.0
-scale = Vector2(0.0698197, 0.0611891)
-icon = ExtResource("4_mr54b")
+[node name="balance" type="Button" parent="MarginContainer/VBoxContainer/TextureRect/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("5_4c36h")
+flat = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/lut_ball/lut_ball" to="." method="_on_lut_ball_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureRect/HBoxContainer2/lut_ball" to="." method="_on_lut_ball_pressed"]

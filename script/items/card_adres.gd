@@ -7,7 +7,7 @@ extends Control
 @onready var main_adres = $adres
 
 
-func _process(_delta):
+func _ready():
 	main_name.text = Main
 	main_adres.text = adress
 
