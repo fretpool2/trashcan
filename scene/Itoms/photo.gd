@@ -1,5 +1,8 @@
 extends Control
-
+@onready var color_rect_5 = $ColorRect5
+@onready var color_rect_4 = $ColorRect4
+@onready var color_rect_3 = $ColorRect3
+@onready var color_rect_2 = $ColorRect2
 @onready var color_rect = $ColorRect
 @onready var label = $Label
 
@@ -20,6 +23,10 @@ func _ready():
 		randf_range(0, 1)
 		)
 	color_rect.color = color
+	color_rect_2.color = color
+	color_rect_3.color = color
+	color_rect_4.color = color
+	color_rect_5.color = color
 
 	# Обновим текст внутри ColorRect, чтобы отобразить первую букву и установленный цвет
 	label.text = firstLetter

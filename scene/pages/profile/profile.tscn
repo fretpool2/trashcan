@@ -59,12 +59,13 @@ theme_override_constants/separation = 619
 layout_mode = 2
 
 [node name="photos" type="Control" parent="MarginContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="Photo" parent="MarginContainer/HBoxContainer/photos" instance=ExtResource("2_6mheg")]
 layout_mode = 1
-scale = Vector2(2, 2)
+offset_right = 0.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/seting" to="." method="_on_seting_pressed"]

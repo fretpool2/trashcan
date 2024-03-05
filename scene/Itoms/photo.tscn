@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1ix7mdunipu4"]
+[gd_scene load_steps=3 format=3 uid="uid://c1ix7mdunipu4"]
 
 [ext_resource type="Script" path="res://scene/Itoms/photo.gd" id="1_xfu3q"]
+[ext_resource type="Texture2D" uid="uid://baj7duqyslgtw" path="res://picture/cykleee.png" id="2_e8ih5"]
 
 [node name="Photo" type="Control"]
 layout_mode = 3
@@ -15,8 +16,38 @@ script = ExtResource("1_xfu3q")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -64.0
-offset_bottom = 64.0
+offset_left = -53.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 55.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -47.0
+offset_top = 4.0
+offset_right = -17.0
+offset_bottom = 13.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -47.0
+offset_top = 50.0
+offset_right = -17.0
+offset_bottom = 59.0
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 18.0
+offset_right = -4.0
+offset_bottom = 47.0
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -59.0
+offset_top = 17.0
+offset_right = -53.0
+offset_bottom = 47.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -27,6 +58,12 @@ theme_override_font_sizes/font_size = 45
 text = "N"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -64.0
+offset_bottom = 64.0
+texture = ExtResource("2_e8ih5")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
