@@ -1,9 +1,9 @@
 extends Control
 
-@onready var log = $MarginContainer/VBoxContainer/Login/login
-@onready var pas = $MarginContainer/VBoxContainer/Password/pasw
-@onready var check_pole = $MarginContainer/VBoxContainer/check_pole
-@onready var label = $MarginContainer/VBoxContainer/check_pole/Label
+@onready var log = $MarginContainer/VBoxContainer2/HBoxContainer3/login
+@onready var pas = $MarginContainer/VBoxContainer2/HBoxContainer/pasw
+@onready var check_pole = $MarginContainer/VBoxContainer2/check_pole
+@onready var label = $MarginContainer/VBoxContainer2/check_pole/check_pole
 var falseAcc = false
 
 func check():
@@ -32,5 +32,5 @@ func _on_button_pressed():
 	check()
 
 
-func _on_no_acc_pressed():
+func _on_no_acc_2_pressed():
 	get_tree().change_scene_to_file("res://scene/main/registr.tscn")
