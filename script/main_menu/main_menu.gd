@@ -1,8 +1,10 @@
 extends Control
 
 @onready var names = $MarginContainer/VBoxContainer2/VBoxContainer3/HBoxContainer3/Name
+@onready var animation_player = $AnimationPlayer
 
 func _ready():
+	animation_player.play("start")
 	names.text = Accaunt.firstName + "!"
 	pass
 func _on_button_pressed():
