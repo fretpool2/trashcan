@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2gaexnws7lpp"]
+[gd_scene load_steps=10 format=3 uid="uid://c2gaexnws7lpp"]
 
 [ext_resource type="Script" path="res://script/main/auth.gd" id="1_ae720"]
 [ext_resource type="Texture2D" uid="uid://xlv5ee136cka" path="res://picture/ramkavoda.png" id="2_k1j74"]
@@ -7,6 +7,60 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1yv5"]
 atlas = ExtResource("2_of802")
+
+[sub_resource type="Animation" id="Animation_y5qrr"]
+resource_name = "start"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ei1l4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_toa7h"]
+resource_name = "next"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_klcdr"]
+_data = {
+"RESET": SubResource("Animation_ei1l4"),
+"next": SubResource("Animation_toa7h"),
+"start": SubResource("Animation_y5qrr")
+}
 
 [node name="Auth" type="Control"]
 layout_mode = 3
@@ -17,16 +71,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ae720")
 
-[node name="check_pole" type="Control" parent="."]
-visible = false
-layout_mode = 2
-anchors_preset = 0
-offset_left = 360.0
-offset_top = 140.0
-offset_right = 360.0
-offset_bottom = 140.0
-
 [node name="MarginContainer" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,7 +114,7 @@ size_flags_horizontal = 3
 [node name="text syst" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.294118, 0.294118, 0.294118, 1)
 theme_override_font_sizes/font_size = 16
 text = "Войдите в систему, чтобы получить доступ к приложению"
 horizontal_alignment = 1
@@ -83,6 +129,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="check_pole" type="HBoxContainer" parent="MarginContainer/VBoxContainer2"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = -67
 
@@ -91,7 +138,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="check_pole" type="Label" parent="MarginContainer/VBoxContainer2/check_pole"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.831373, 0.376471, 0.294118, 1)
 theme_override_font_sizes/font_size = 16
@@ -115,7 +161,7 @@ size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.294118, 0.294118, 0.294118, 1)
 placeholder_text = "Логин"
 right_icon = SubResource("AtlasTexture_y1yv5")
 flat = true
@@ -137,7 +183,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.294118, 0.294118, 0.294118, 1)
 placeholder_text = "Пароль"
 max_length = 18
 flat = true
@@ -173,26 +219,44 @@ theme_override_constants/separation = -67
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="no acc2" type="Button" parent="MarginContainer/VBoxContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(229.785, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.454902, 0.258824, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.454902, 0.258824, 1)
+text = "Ещё нет аккаунта?
+ Зарегистрируйся здесь!"
+flat = true
+
 [node name="text no acc" type="Label" parent="MarginContainer/VBoxContainer3/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.294118, 0.294118, 0.294118, 1)
 theme_override_font_sizes/font_size = 18
 text = "Ещё нет аккаунта? Зарегистрируйся здесь!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="no acc2" type="Button" parent="MarginContainer/VBoxContainer3/HBoxContainer/text no acc"]
-custom_minimum_size = Vector2(229.785, 0)
-layout_mode = 2
-offset_left = 19.0
-offset_right = 67.32
-offset_bottom = 55.0
-flat = true
-
 [node name="Control2" type="Control" parent="MarginContainer/VBoxContainer3/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_klcdr")
+}
+
+[node name="next" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="next2" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/HBoxContainer2/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer3/HBoxContainer/text no acc/no acc2" to="." method="_on_no_acc_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer3/HBoxContainer/no acc2" to="." method="_on_no_acc_2_pressed"]
+[connection signal="timeout" from="next" to="." method="_on_next_timeout"]
+[connection signal="timeout" from="next2" to="." method="_on_next_2_timeout"]
