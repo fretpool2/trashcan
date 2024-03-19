@@ -159,6 +159,7 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="loginin" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/Control"]
+custom_minimum_size = Vector2(350, 80)
 layout_mode = 2
 offset_left = -57.0
 offset_top = 52.0
@@ -167,6 +168,7 @@ offset_bottom = 108.0
 theme_override_font_sizes/font_size = 50
 icon = ExtResource("2_kltmv")
 flat = true
+expand_icon = true
 
 [node name="next_page" type="Timer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/Control"]
 wait_time = 0.3
@@ -176,6 +178,7 @@ one_shot = true
 layout_mode = 2
 
 [node name="reg" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/Control2"]
+custom_minimum_size = Vector2(350, 80)
 layout_mode = 2
 offset_left = -57.0
 offset_top = 128.0
@@ -184,6 +187,7 @@ offset_bottom = 184.0
 theme_override_font_sizes/font_size = 50
 icon = ExtResource("3_6jo7h")
 flat = true
+expand_icon = true
 
 [node name="next_page_2" type="Timer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/Control2"]
 wait_time = 0.3
@@ -192,11 +196,12 @@ one_shot = true
 [node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
 text = "Добро пожаловать!"
 
 [node name="Ffeb31e8-de93-44d8-b797-70Fad82Baa5b" type="Sprite2D" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
-position = Vector2(71, -212)
-scale = Vector2(1.93396, 1.78302)
+position = Vector2(114, -216)
+scale = Vector2(2, 1.844)
 texture = ExtResource("4_uroam")
 
 [node name="Control3" type="Control" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
@@ -204,9 +209,9 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/Control3"]
 layout_mode = 2
-offset_left = -9.0
+offset_left = 36.0
 offset_top = -165.0
-offset_right = 149.0
+offset_right = 194.0
 offset_bottom = -142.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "GreenCycle"

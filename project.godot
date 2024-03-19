@@ -25,11 +25,14 @@ Ifotrash="*res://script/ifotrash.gd"
 
 window/size/viewport_width=720
 window/size/viewport_height=1000
-window/stretch/mode="viewport"
+window/size/initial_position_type=0
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/handheld/orientation=1
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(1, 1, 1, 1)
