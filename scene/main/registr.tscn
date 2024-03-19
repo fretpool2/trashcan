@@ -12,27 +12,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cg27n")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 72
-
-[node name="Label" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Label"]
+[node name="Label" type="Label" parent="."]
 visible = false
-layout_mode = 1
-anchors_preset = 8
+layout_mode = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -46,189 +28,143 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
 text = "Все поля должны быть заполнены!"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Login" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Login" type="LineEdit" parent="MarginContainer/VBoxContainer/Login"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = 76.0
-offset_right = 148.0
-offset_bottom = 136.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-placeholder_text = "Login*"
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 50
 
-[node name="Pass" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+theme_override_constants/separation = 10
 
-[node name="pass" type="LineEdit" parent="MarginContainer/VBoxContainer/Pass"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = 84.0
-offset_right = 148.0
-offset_bottom = 144.0
-grow_horizontal = 2
-grow_vertical = 2
-placeholder_text = "Password*"
-
-[node name="Pass2" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="pasw2" type="LineEdit" parent="MarginContainer/VBoxContainer/Pass2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = 92.0
-offset_right = 148.0
-offset_bottom = 152.0
-grow_horizontal = 2
-grow_vertical = 2
-placeholder_text = "Password*"
-
-[node name="Fnaim" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="FirstName" type="LineEdit" parent="MarginContainer/VBoxContainer/Fnaim"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = 100.0
-offset_right = 148.0
-offset_bottom = 160.0
-grow_horizontal = 2
-grow_vertical = 2
-placeholder_text = "First Name*"
-
-[node name="LName" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="LastName" type="LineEdit" parent="MarginContainer/VBoxContainer/LName"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = 108.0
-offset_right = 148.0
-offset_bottom = 168.0
-grow_horizontal = 2
-grow_vertical = 2
-placeholder_text = "Last Name*"
-
-[node name="mail" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="mail" type="LineEdit" parent="MarginContainer/VBoxContainer/mail"]
-layout_mode = 1
-offset_left = -152.0
-offset_top = 116.0
-offset_right = 148.0
-offset_bottom = 176.0
-placeholder_text = "Mail*"
-
-[node name="pustota" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Buton" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="text join" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Buton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = 84.0
-offset_right = 137.0
-offset_bottom = 144.0
-grow_horizontal = 2
-grow_vertical = 2
-icon = ExtResource("2_rytnx")
-
-[node name="text join" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="text join" type="Label" parent="MarginContainer/VBoxContainer/text join"]
-layout_mode = 0
-offset_left = -136.0
-offset_top = -644.0
-offset_right = 143.0
-offset_bottom = -602.0
+size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 30
 text = "Присоединяйтесь!"
+horizontal_alignment = 1
 
-[node name="text syst" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = -67
 
-[node name="text syst" type="Label" parent="MarginContainer/VBoxContainer/text syst"]
-layout_mode = 0
-offset_left = -136.0
-offset_top = -660.0
-offset_right = 135.0
-offset_bottom = -597.0
-text = "Войдите в систему, чтобы получить доступ к приложению"
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="text syst" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Войдите в систему, чтобы получить доступ к приложению
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="text an acc" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -87
+
+[node name="FirstName" type="LineEdit" parent="MarginContainer/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+placeholder_text = "First Name*"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LastName" type="LineEdit" parent="MarginContainer/VBoxContainer2/HBoxContainer4"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+placeholder_text = "Last Name*"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Login" type="LineEdit" parent="MarginContainer/VBoxContainer2/HBoxContainer5"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+placeholder_text = "Login*"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="mail" type="LineEdit" parent="MarginContainer/VBoxContainer2/HBoxContainer6"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+placeholder_text = "Mail*"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="pass" type="LineEdit" parent="MarginContainer/VBoxContainer2/HBoxContainer7"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+placeholder_text = "Password*"
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="pasw2" type="LineEdit" parent="MarginContainer/VBoxContainer2/HBoxContainer8"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+placeholder_text = "Password*"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer2/HBoxContainer9"]
+layout_mode = 2
+icon = ExtResource("2_rytnx")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer3"]
 layout_mode = 2
 
-[node name="text an acc" type="Label" parent="MarginContainer/VBoxContainer/text an acc"]
-layout_mode = 0
-offset_left = -104.0
-offset_top = -28.0
-offset_right = 104.0
-offset_bottom = 21.0
-text = "У вас уже есть аккаунт? Войдите здесь!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="an acc" type="Control" parent="MarginContainer/VBoxContainer"]
-modulate = Color(1, 1, 1, 0)
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer3/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="an acc" type="Button" parent="MarginContainer/VBoxContainer/an acc"]
-layout_mode = 0
-offset_left = -97.0
-offset_top = -96.0
-offset_right = 95.0
-offset_bottom = -44.0
+[node name="an acc" type="Button" parent="MarginContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+text = "У вас уже есть аккаунт?
+ Войдите здесь!"
+flat = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Buton/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/an acc/an acc" to="." method="_on_an_acc_pressed"]
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/HBoxContainer9/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer3/HBoxContainer/an acc" to="." method="_on_an_acc_pressed"]
