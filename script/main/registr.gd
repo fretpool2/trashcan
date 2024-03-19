@@ -1,13 +1,19 @@
 extends Control
 
-@onready var label = $MarginContainer/VBoxContainer/Label/Label
-@onready var login = $MarginContainer/VBoxContainer/Login/Login
-@onready var passw = $MarginContainer/VBoxContainer/Pass/pass
-@onready var pasw_2 = $MarginContainer/VBoxContainer/Pass2/pasw2
-@onready var first_name = $MarginContainer/VBoxContainer/Fnaim/FirstName
-@onready var last_name = $MarginContainer/VBoxContainer/LName/LastName
-@onready var gmail = $MarginContainer/VBoxContainer/mail/mail
+@onready var next = $next
+@onready var next_2 = $next2
+@onready var animation_player = $AnimationPlayer
+@onready var label = $MarginContainer/VBoxContainer2/HBoxContainer/check_pole
+@onready var login = $MarginContainer/VBoxContainer2/HBoxContainer5/Login
+@onready var passw = $MarginContainer/VBoxContainer2/HBoxContainer7/pass
+@onready var pasw_2 = $MarginContainer/VBoxContainer2/HBoxContainer8/pasw2
+@onready var first_name = $MarginContainer/VBoxContainer2/HBoxContainer3/FirstName
+@onready var last_name = $MarginContainer/VBoxContainer2/HBoxContainer4/LastName
+@onready var gmail = $MarginContainer/VBoxContainer2/HBoxContainer6/mail
 var reg = false
+
+func _ready():
+	animation_player.play("Start")
 
 # Добавьте функцию проверки на электронный адрес
 func isEmailValid(email: String) -> bool:
@@ -43,8 +49,18 @@ func _on_button_pressed():
 		Accaunt.lastName = last_name.text
 		Accaunt.mail = gmail.text
 		Accaunt.save_acc_data()
-		get_tree().change_scene_to_file("res://scene/main/main.tscn")
+		next.start()
+		animation_player.play("next")
 
 
 func _on_an_acc_pressed():
+	next_2.start()
+	animation_player.play("next")
+
+
+func _on_next_timeout():
+	get_tree().change_scene_to_file("res://scene/main/main.tscn")
+
+
+func _on_next_2_timeout():
 	get_tree().change_scene_to_file("res://scene/main/auth.tscn")
