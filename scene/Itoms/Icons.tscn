@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d17glgholt8e2"]
+
+[ext_resource type="Texture2D" uid="uid://crl08r6dyphih" path="res://picture/ffeb31e8-de93-44d8-b797-70fad82baa5b.png" id="1_lshg7"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 212.0
+offset_bottom = 212.0
+texture = ExtResource("1_lshg7")

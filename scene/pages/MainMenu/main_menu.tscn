@@ -1,10 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd2mi3i5c6sb5"]
+[gd_scene load_steps=10 format=3 uid="uid://cd2mi3i5c6sb5"]
 
 [ext_resource type="Script" path="res://script/main_menu/main_menu.gd" id="1_8r7xq"]
 [ext_resource type="PackedScene" uid="uid://c1ix7mdunipu4" path="res://scene/Itoms/photo.tscn" id="2_5mt5g"]
-[ext_resource type="Texture2D" uid="uid://efe4hhrxrrcl" path="res://picture/down_panel.png" id="3_vwkxu"]
-[ext_resource type="Texture2D" uid="uid://b183xu35jcimr" path="res://picture/icons8-ecology-50.png" id="4_r4xuy"]
-[ext_resource type="Texture2D" uid="uid://duhfbt5sdm72" path="res://picture/icons8-wallet-50.png" id="5_4c36h"]
+[ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="2_i6xaq"]
+[ext_resource type="Texture2D" uid="uid://dvnvwcgucptv6" path="res://picture/main_menu/white_cube.png" id="4_oxuja"]
+[ext_resource type="Texture2D" uid="uid://y3c0ncun5647" path="res://picture/main_menu/green_krug.png" id="5_fgcy5"]
+[ext_resource type="Texture2D" uid="uid://hwomu6o2gw5i" path="res://picture/main_menu/pluse.png" id="6_16eo2"]
+
+[sub_resource type="Animation" id="Animation_65jqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y0qbv"]
+resource_name = "start"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqfdr"]
+_data = {
+"RESET": SubResource("Animation_65jqc"),
+"start": SubResource("Animation_y0qbv")
+}
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -16,64 +54,153 @@ grow_vertical = 2
 script = ExtResource("1_8r7xq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 35
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 35
-theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = -29
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Photo" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_5mt5g")]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
-size_flags_horizontal = 10
+size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 950
+size_flags_vertical = 2
+theme_override_constants/separation = 5
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(720, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource("2_i6xaq")
+
+[node name="Photo" parent="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/TextureRect" instance=ExtResource("2_5mt5g")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -15.0
+offset_right = -15.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 1
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/TextureRect"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 56.0
+offset_bottom = 50.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_oxuja")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2/VBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Приветствуем,"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/VBoxContainer3"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer2/VBoxContainer3/HBoxContainer3"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "[Name]"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
 size_flags_vertical = 10
-texture = ExtResource("3_vwkxu")
-expand_mode = 5
-stretch_mode = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/VBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(720, 110.135)
 layout_mode = 2
-offset_left = -325.0
-offset_top = -29.0
-offset_right = 325.0
-offset_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource("2_i6xaq")
+flip_v = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/VBoxContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -361.0
+offset_top = -30.0675
+offset_right = 360.0
+offset_bottom = 53.9325
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 8
-theme_override_constants/separation = 138
+theme_override_constants/separation = 141
 
-[node name="lut_ball" type="Button" parent="MarginContainer/VBoxContainer/TextureRect/HBoxContainer2"]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer2/VBoxContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer2/VBoxContainer2/TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 size_flags_horizontal = 4
-icon = ExtResource("4_r4xuy")
-flat = true
+size_flags_vertical = 4
+texture = ExtResource("4_oxuja")
 
-[node name="balance" type="Button" parent="MarginContainer/VBoxContainer/TextureRect/HBoxContainer2"]
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer2/VBoxContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer2/VBoxContainer2/TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 size_flags_horizontal = 4
-icon = ExtResource("5_4c36h")
-flat = true
+size_flags_vertical = 4
+texture = ExtResource("4_oxuja")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureRect/HBoxContainer2/lut_ball" to="." method="_on_lut_ball_pressed"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/VBoxContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -54.0675
+offset_bottom = 20.9325
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("5_fgcy5")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer2/VBoxContainer2/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 5.33333
+offset_right = 87.0
+offset_bottom = 80.3333
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_16eo2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xqfdr")
+}
