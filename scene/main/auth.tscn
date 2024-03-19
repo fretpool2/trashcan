@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://script/main/auth.gd" id="1_ae720"]
 [ext_resource type="Texture2D" uid="uid://xlv5ee136cka" path="res://picture/ramkavoda.png" id="2_k1j74"]
-[ext_resource type="Texture2D" uid="uid://7eskgd6im2v8" path="res://picture/profile.png" id="2_of802"]
+[ext_resource type="Texture2D" uid="uid://deuhtx5e8oh4q" path="res://picture/mini_profil.png" id="2_x3s4e"]
 [ext_resource type="Texture2D" uid="uid://bmdr4hqcjvydl" path="res://picture/a623e097-3a3f-4d71-86b4-fb19acdf2365.png" id="2_ycasr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1yv5"]
-atlas = ExtResource("2_of802")
+atlas = ExtResource("2_x3s4e")
 
 [sub_resource type="Animation" id="Animation_ei1l4"]
 length = 0.001

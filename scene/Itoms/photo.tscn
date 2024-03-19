@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1ix7mdunipu4"]
 
 [ext_resource type="Script" path="res://scene/Itoms/photo.gd" id="1_xfu3q"]
-[ext_resource type="Texture2D" uid="uid://7eskgd6im2v8" path="res://picture/profile.png" id="2_awiok"]
+[ext_resource type="Texture2D" uid="uid://rw1t2qf65hvt" path="res://picture/profile.png" id="2_awiok"]
 
 [node name="Photo" type="Control"]
 layout_mode = 3

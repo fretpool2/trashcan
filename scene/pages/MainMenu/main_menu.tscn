@@ -7,6 +7,21 @@
 [ext_resource type="Texture2D" uid="uid://y3c0ncun5647" path="res://picture/main_menu/green_krug.png" id="5_fgcy5"]
 [ext_resource type="Texture2D" uid="uid://hwomu6o2gw5i" path="res://picture/main_menu/pluse.png" id="6_16eo2"]
 
+[sub_resource type="Animation" id="Animation_65jqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_y0qbv"]
 resource_name = "start"
 length = 0.2
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_65jqc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xqfdr"]
