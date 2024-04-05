@@ -33,7 +33,7 @@ func load_acc_data():
 		password = "12345678"
 		firstName = "Иван"
 		lastName = "Иванов"
-		mail = "example@example.ru"
+		mail = "89000000000"
 		signin = false
 
 func _ready():
