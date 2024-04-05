@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfkypqauofras"]
+[gd_scene load_steps=2 format=3 uid="uid://cfkypqauofras"]
 
 [ext_resource type="Script" path="res://script/profile/SetingsProfile.gd" id="1_348tn"]
-[ext_resource type="Texture2D" uid="uid://c3faf0cljulst" path="res://picture/pngwing.com (1).png" id="2_jytnj"]
 
 [node name="SetingProf" type="Control"]
 layout_mode = 3
@@ -64,7 +63,6 @@ offset_top = 268.0
 offset_right = 4120.0
 offset_bottom = 4372.0
 scale = Vector2(0.0231567, 0.0228292)
-icon = ExtResource("2_jytnj")
 
 [node name="lastName" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

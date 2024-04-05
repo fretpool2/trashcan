@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1ix7mdunipu4"]
 
 [ext_resource type="Script" path="res://scene/Itoms/photo.gd" id="1_xfu3q"]
-[ext_resource type="Texture2D" uid="uid://rw1t2qf65hvt" path="res://picture/profile.png" id="2_awiok"]
+[ext_resource type="Texture2D" uid="uid://cros3gmewolh2" path="res://picture/main_menu/profil.png" id="2_0d1pj"]
 
 [node name="Photo" type="Control"]
 layout_mode = 3
@@ -16,10 +16,11 @@ script = ExtResource("1_xfu3q")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = -64.0
+offset_right = 64.0
 offset_bottom = 64.0
-icon = ExtResource("2_awiok")
+icon = ExtResource("2_0d1pj")
 flat = true
+icon_alignment = 1
 expand_icon = true
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

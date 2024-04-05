@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baj7duqyslgtw"
-path="res://.godot/imported/cykleee.png-f747c038b9200421c39463d21278b683.ctex"
+uid="uid://c7vb5onjb1gy3"
+path="res://.godot/imported/Packet.png-89166fa9d8f011449ea04d7a79e5cd27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://picture/cykleee.png"
-dest_files=["res://.godot/imported/cykleee.png-f747c038b9200421c39463d21278b683.ctex"]
+source_file="res://picture/main_menu/Packet.png"
+dest_files=["res://.godot/imported/Packet.png-89166fa9d8f011449ea04d7a79e5cd27.ctex"]
 
 [params]
 

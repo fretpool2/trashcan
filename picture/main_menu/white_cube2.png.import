@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cedwo1r2gcpce"
-path="res://.godot/imported/Coins-PNG-Clip-Art-HD-Quality.png-f75477cbc0f83f34bc8002120d11af32.ctex"
+uid="uid://2diq4dw51q5t"
+path="res://.godot/imported/white_cube2.png-9084e0f14a44674e29a691f95fde9c16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://picture/Coins-PNG-Clip-Art-HD-Quality.png"
-dest_files=["res://.godot/imported/Coins-PNG-Clip-Art-HD-Quality.png-f75477cbc0f83f34bc8002120d11af32.ctex"]
+source_file="res://picture/main_menu/white_cube2.png"
+dest_files=["res://.godot/imported/white_cube2.png-9084e0f14a44674e29a691f95fde9c16.ctex"]
 
 [params]
 
