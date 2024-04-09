@@ -1,24 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://7im8xwiujbnw"]
+[gd_scene load_steps=5 format=3 uid="uid://341vc8x6agxn"]
 
-[ext_resource type="Script" path="res://script/balance/balance.gd" id="1_egcxf"]
-[ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="2_2u5jf"]
-[ext_resource type="Texture2D" uid="uid://bhhresme0lj10" path="res://picture/main_menu/pngwing.com (1).png" id="3_y4ovi"]
-[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka.png" id="4_u38gq"]
+[ext_resource type="Script" path="res://script/balance/My_check.gd" id="1_p3kmc"]
+[ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="2_mjopn"]
+[ext_resource type="Texture2D" uid="uid://bhhresme0lj10" path="res://picture/main_menu/pngwing.com (1).png" id="3_pj5rn"]
+[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka.png" id="4_4prdh"]
 
-[node name="Balance" type="Control"]
+[node name="MyCheck" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_egcxf")
+script = ExtResource("1_p3kmc")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -26,7 +28,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 82.295)
 layout_mode = 2
-texture = ExtResource("2_2u5jf")
+texture = ExtResource("2_mjopn")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TextureRect"]
 layout_mode = 1
@@ -42,7 +44,7 @@ offset_bottom = 14.8525
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "История баллов"
+text = "Мои чеки"
 horizontal_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/TextureRect"]
@@ -51,7 +53,7 @@ offset_left = 8.0
 offset_top = 7.0
 offset_right = 73.0
 offset_bottom = 69.0
-texture = ExtResource("3_y4ovi")
+texture = ExtResource("3_pj5rn")
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/TextureRect/TextureRect2"]
 layout_mode = 0
@@ -60,7 +62,7 @@ offset_top = 53.0
 offset_right = 119.0
 offset_bottom = 111.0
 rotation = 3.14159
-icon = ExtResource("4_u38gq")
+icon = ExtResource("4_4prdh")
 flat = true
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
