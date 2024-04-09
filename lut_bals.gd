@@ -5,6 +5,7 @@ var img_texture = ImageTexture.new()
 @onready var adres = $MarginContainer/VBoxContainer/VBoxContainer2/Adres
 @onready var next = $MarginContainer/VBoxContainer/next/next
 @onready var texture = $MarginContainer/VBoxContainer/VBoxContainer/Control/TextureRect
+@export var anim :AnimationPlayer
 
 func _ready():
 	names.text = Ifotrash.names
@@ -30,3 +31,9 @@ func _on_file_dialog_file_selected(path):
 	
 func _on_exit_pressed():
 	get_tree().change_scene_to_file("res://scene/balance/catalog.tscn")
+	
+
+
+func _on_next_pressed():
+	get_tree().change_scene_to_file("res://scene/pages/MainMenu/main_menu.tscn")
+	Globals.add_bals = true

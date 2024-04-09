@@ -201,4 +201,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer/TextureRect/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/select_img/Button" to="." method="_on_button_pressed"]
 [connection signal="file_selected" from="MarginContainer/VBoxContainer/VBoxContainer/FileDialog" to="." method="_on_file_dialog_file_selected"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/next/next" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/next/next" to="." method="_on_next_pressed"]

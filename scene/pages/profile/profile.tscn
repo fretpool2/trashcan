@@ -28,21 +28,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_e6dqr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_77dq7"]
 resource_name = "start"
 length = 0.3
@@ -357,7 +342,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("4_8qldm")
 
-[node name="Photo" parent="MarginContainer/down_panel/TextureRect/HBoxContainer/TextureRect5" node_paths=PackedStringArray("anim") instance=ExtResource("2_6mheg")]
+[node name="Photo" parent="MarginContainer/down_panel/TextureRect/HBoxContainer/TextureRect5" instance=ExtResource("2_6mheg")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -368,7 +353,6 @@ offset_left = -33.0
 offset_top = -45.0
 offset_right = 36.0
 offset_bottom = 28.0
-anim = NodePath("")
 
 [node name="Control5" type="Control" parent="MarginContainer/down_panel/TextureRect/HBoxContainer"]
 layout_mode = 2

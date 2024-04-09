@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cd2mi3i5c6sb5"]
+[gd_scene load_steps=16 format=3 uid="uid://cd2mi3i5c6sb5"]
 
 [ext_resource type="Script" path="res://script/main_menu/main_menu.gd" id="1_8r7xq"]
 [ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="2_i6xaq"]
@@ -24,6 +24,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-366, 88)]
 }
 
 [sub_resource type="Animation" id="Animation_ljtuf"]
@@ -58,9 +82,38 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_tisyu"]
+resource_name = "add_balls"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 2.7, 3.4),
+"transitions": PackedFloat32Array(0.732043, 3.605, 3.605, 0.732043),
+"update": 0,
+"values": [Vector2(-366, 88), Vector2(2, 88), Vector2(2, 88), Vector2(-366, 88)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xqfdr"]
 _data = {
 "RESET": SubResource("Animation_65jqc"),
+"add_balls": SubResource("Animation_tisyu"),
 "next": SubResource("Animation_ljtuf"),
 "start": SubResource("Animation_y0qbv")
 }
@@ -165,6 +218,32 @@ custom_minimum_size = Vector2(0, 450)
 layout_mode = 2
 texture = ExtResource("3_4xk7e")
 expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/VBoxContainer/Control"]
+self_modulate = Color(0.537255, 0.537255, 0.537255, 1)
+layout_mode = 0
+offset_left = -366.0
+offset_top = 88.0
+offset_right = -6.0
+offset_bottom = 146.0
+texture = ExtResource("2_i6xaq")
+
+[node name="inf_balls" type="Label" parent="MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Вы получили: ball"
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
@@ -339,5 +418,9 @@ libraries = {
 "": SubResource("AnimationLibrary_xqfdr")
 }
 
+[node name="Timer" type="Timer" parent="AnimationPlayer"]
+one_shot = true
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect4/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/TextureRect/pluse" to="." method="_on_pluse_pressed"]
+[connection signal="timeout" from="AnimationPlayer/Timer" to="." method="_on_timer_timeout"]
