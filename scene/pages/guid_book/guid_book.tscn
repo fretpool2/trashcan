@@ -1,0 +1,165 @@
+[gd_scene load_steps=7 format=3 uid="uid://okm0d3aukqty"]
+
+[ext_resource type="Texture2D" uid="uid://c7nn6vel440cv" path="res://picture/6b665174-a063-4ca8-84ab-26054f1960cc.png" id="1_smegk"]
+[ext_resource type="Texture2D" uid="uid://d02lanhclh7rv" path="res://picture/main_menu/back_green_line.png" id="2_ni4mx"]
+[ext_resource type="FontFile" uid="uid://blwr3mw3q5wd4" path="res://Roboto-Black.ttf" id="3_egha5"]
+[ext_resource type="PackedScene" uid="uid://bg555v5g6go7h" path="res://scene/Itoms/down_panel.tscn" id="4_4ipub"]
+[ext_resource type="Shader" path="res://down_panel.gdshader" id="5_jhq1k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6n7v3"]
+shader = ExtResource("5_jhq1k")
+shader_parameter/color = Color(0.388235, 0.388235, 0.388235, 0.862745)
+shader_parameter/width = 6.0
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+shader_parameter/add_margins = true
+
+[node name="GuidBook" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Upper" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Upper"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("1_smegk")
+expand_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upper/TextureRect"]
+layout_mode = 2
+anchor_left = 0.167
+anchor_top = 0.64
+anchor_right = 0.167
+anchor_bottom = 0.667
+offset_left = -120.24
+offset_top = -196.0
+offset_right = 599.76
+offset_bottom = 84.9
+grow_horizontal = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/Upper/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="under_upper" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.352
+anchor_right = 0.5
+anchor_bottom = 0.352
+offset_left = -298.0
+offset_top = -208.0
+offset_right = 298.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="under_upper"]
+custom_minimum_size = Vector2(596.555, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_ni4mx")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="under_upper/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_egha5")
+theme_override_font_sizes/font_size = 35
+text = "Книга-помощник"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" parent="." instance=ExtResource("4_4ipub")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect4" parent="Control/down_panel/TextureRect/HBoxContainer" index="2"]
+material = SubResource("ShaderMaterial_6n7v3")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -208.0
+offset_right = 250.0
+offset_bottom = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 17.0004
+offset_right = 218.0
+offset_bottom = 167.0
+
+[node name="Control2" type="Control" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 13.0004
+offset_right = 480.0
+offset_bottom = 163.0
+
+[node name="Control3" type="Control" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Control3"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 195.0
+offset_right = 218.0
+offset_bottom = 345.0
+
+[node name="Control4" type="Control" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Control4"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 190.0
+offset_right = 480.0
+offset_bottom = 340.0
+
+[editable path="Control"]
