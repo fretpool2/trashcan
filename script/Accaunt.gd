@@ -7,6 +7,7 @@ var lastName = "Иванов"
 var mail = "example@example.ru"
 var signin = false
 var save_settings = "user://Accaunt.db"
+var balls = 10
 
 func save_acc_data():
 	var config = ConfigFile.new()
