@@ -8,6 +8,21 @@
 [ext_resource type="Texture2D" uid="uid://bvb8ef3ixfvng" path="res://picture/main_menu/otpechatok.png" id="6_disb8"]
 [ext_resource type="Texture2D" uid="uid://bj3v7nabg1uhi" path="res://picture/main_menu/run.png" id="7_36dwp"]
 
+[sub_resource type="Animation" id="Animation_verrb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_hthfu"]
 resource_name = "start"
 length = 0.3
@@ -22,21 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_verrb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b7t12"]
@@ -138,7 +138,7 @@ layout_mode = 2
 texture = ExtResource("5_wmleq")
 expand_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="FIO" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.486275, 0.705882, 0.360784, 1)
@@ -163,7 +163,7 @@ layout_mode = 2
 texture = ExtResource("6_disb8")
 expand_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Pasword" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.486275, 0.705882, 0.360784, 1)
@@ -186,12 +186,12 @@ layout_mode = 2
 texture = ExtResource("6_disb8")
 expand_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
+[node name="mail" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.486275, 0.705882, 0.360784, 1)
 theme_override_font_sizes/font_size = 24
-text = "Изменить номер телефона"
+text = "Изменить электронную почту"
 flat = true
 
 [node name="ColorRect2" type="ColorRect" parent="MarginContainer/VBoxContainer/VBoxContainer"]
@@ -211,7 +211,7 @@ layout_mode = 2
 texture = ExtResource("7_36dwp")
 expand_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer4"]
+[node name="del_acc" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.486275, 0.705882, 0.360784, 1)
@@ -225,3 +225,7 @@ libraries = {
 }
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer/TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/FIO" to="." method="_on_fio_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Pasword" to="." method="_on_pasword_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/mail" to="." method="_on_mail_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer4/del_acc" to="." method="_on_del_acc_pressed"]

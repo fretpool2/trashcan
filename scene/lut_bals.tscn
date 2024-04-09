@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5v8c3b10mdnw"]
+[gd_scene load_steps=5 format=3 uid="uid://c5v8c3b10mdnw"]
 
 [ext_resource type="Script" path="res://lut_bals.gd" id="1_h4nrg"]
+[ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="2_jju0s"]
+[ext_resource type="Texture2D" uid="uid://2diq4dw51q5t" path="res://picture/main_menu/white_cube2.png" id="3_t14b8"]
+[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka.png" id="4_angsb"]
 
 [node name="lut_bals" type="Control"]
 layout_mode = 3
@@ -11,18 +14,191 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h4nrg")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 165.0
-offset_bottom = 112.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="Label2" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 108
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.5
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/VBoxContainer"]
+custom_minimum_size = Vector2(419.735, 97)
+layout_mode = 2
+texture = ExtResource("2_jju0s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource("3_t14b8")
+stretch_mode = 4
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer/TextureRect"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 128.0
-offset_right = 165.0
-offset_bottom = 176.0
+offset_left = 71.0
+offset_top = 62.0
+offset_right = 133.0
+offset_bottom = 124.0
+rotation = 3.14159
+icon = ExtResource("4_angsb")
+flat = true
+icon_alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Адрес пункта сдачи мусора"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "123"
+horizontal_alignment = 1
+
+[node name="Adres" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "123"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="inf" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.215686, 0.215686, 0.215686, 1)
+theme_override_font_sizes/font_size = 24
+text = "Когда будете готовы прикрипите подтвержадющее фото "
+horizontal_alignment = 1
+
+[node name="select_img" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/select_img"]
+layout_mode = 2
+icon = ExtResource("2_jju0s")
+flat = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/select_img/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Прикрепить фото"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FileDialog" type="FileDialog" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+title = "Open a File"
+initial_position = 2
+size = Vector2i(407, 300)
+ok_button_text = "Открыть"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -80.0
+offset_right = 300.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="next" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="next" type="Button" parent="MarginContainer/VBoxContainer/next"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+disabled = true
+icon = ExtResource("2_jju0s")
+flat = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/next/next"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Далее"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer/TextureRect/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/select_img/Button" to="." method="_on_button_pressed"]
+[connection signal="file_selected" from="MarginContainer/VBoxContainer/VBoxContainer/FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/next/next" to="." method="_on_button_pressed"]

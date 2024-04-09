@@ -26,22 +26,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_y0qbv"]
-resource_name = "start"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_ljtuf"]
 resource_name = "next"
 length = 0.2
@@ -56,6 +40,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y0qbv"]
+resource_name = "start"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xqfdr"]
@@ -236,7 +236,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_wmkgh")
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect4"]
+[node name="Shop" type="Button" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect4"]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 15.0
@@ -323,6 +323,14 @@ offset_bottom = 85.8333
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_16eo2")
 
+[node name="pluse" type="Button" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 55.0
+flat = true
+
 [node name="Underdown" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
 
@@ -330,3 +338,6 @@ layout_mode = 2
 libraries = {
 "": SubResource("AnimationLibrary_xqfdr")
 }
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect4/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/TextureRect/pluse" to="." method="_on_pluse_pressed"]
