@@ -1,15 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://cd2mi3i5c6sb5"]
+[gd_scene load_steps=15 format=3 uid="uid://cd2mi3i5c6sb5"]
 
 [ext_resource type="Script" path="res://script/main_menu/main_menu.gd" id="1_8r7xq"]
 [ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="2_i6xaq"]
+[ext_resource type="Texture2D" uid="uid://d2rdqey2htxkm" path="res://picture/main_menu/8a42b460-6365-415b-9c66-d358dbab1104.png" id="2_irrtm"]
+[ext_resource type="FontFile" uid="uid://blwr3mw3q5wd4" path="res://Roboto-Black.ttf" id="3_02tll"]
 [ext_resource type="Texture2D" uid="uid://d3yoqip5sbimm" path="res://picture/huita.jpg" id="3_4xk7e"]
-[ext_resource type="Texture2D" uid="uid://2diq4dw51q5t" path="res://picture/main_menu/white_cube2.png" id="3_wmkgh"]
-[ext_resource type="Texture2D" uid="uid://b6gdaht5gqh45" path="res://picture/lepistok.png" id="4_pyhvt"]
-[ext_resource type="Texture2D" uid="uid://c7vb5onjb1gy3" path="res://picture/main_menu/Packet.png" id="5_458sv"]
-[ext_resource type="Texture2D" uid="uid://y3c0ncun5647" path="res://picture/main_menu/green_krug.png" id="5_fgcy5"]
-[ext_resource type="Texture2D" uid="uid://hwomu6o2gw5i" path="res://picture/main_menu/pluse.png" id="6_16eo2"]
-[ext_resource type="Texture2D" uid="uid://c4q5dlsod41v6" path="res://picture/main_menu/book.png" id="6_cotnd"]
-[ext_resource type="PackedScene" uid="uid://c1ix7mdunipu4" path="res://scene/Itoms/photo.tscn" id="7_t5l0f"]
+[ext_resource type="PackedScene" uid="uid://bg555v5g6go7h" path="res://scene/Itoms/down_panel.tscn" id="5_23odl"]
+[ext_resource type="Texture2D" uid="uid://crl08r6dyphih" path="res://picture/ffeb31e8-de93-44d8-b797-70fad82baa5b.png" id="6_yrsfj"]
+[ext_resource type="Shader" path="res://down_panel.gdshader" id="7_1vrst"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6mmn1"]
+shader = ExtResource("7_1vrst")
+shader_parameter/color = Color(0.368627, 0.368627, 0.368627, 0.862745)
+shader_parameter/width = 6.0
+shader_parameter/pattern = 0
+shader_parameter/inside = true
+shader_parameter/add_margins = true
 
 [sub_resource type="Animation" id="Animation_65jqc"]
 length = 0.001
@@ -50,6 +56,34 @@ tracks/2/keys = {
 "values": [Vector2(-366, 88)]
 }
 
+[sub_resource type="Animation" id="Animation_tisyu"]
+resource_name = "add_balls"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 2.7, 3.4),
+"transitions": PackedFloat32Array(0.732043, 3.605, 3.605, 0.732043),
+"update": 0,
+"values": [Vector2(-366, 88), Vector2(2, 88), Vector2(2, 88), Vector2(-366, 88)]
+}
+
 [sub_resource type="Animation" id="Animation_ljtuf"]
 resource_name = "next"
 length = 0.2
@@ -80,34 +114,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_tisyu"]
-resource_name = "add_balls"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7, 2.7, 3.4),
-"transitions": PackedFloat32Array(0.732043, 3.605, 3.605, 0.732043),
-"update": 0,
-"values": [Vector2(-366, 88), Vector2(2, 88), Vector2(2, 88), Vector2(-366, 88)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xqfdr"]
@@ -145,20 +151,21 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/ColorRect"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 0.021
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 1.5
-offset_bottom = 79.22
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -15.12
+offset_top = -1.0
+offset_bottom = 308.0
+grow_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/ColorRect/VBoxContainer"]
 clip_contents = true
-custom_minimum_size = Vector2(720, 210)
+custom_minimum_size = Vector2(0, 305)
 layout_mode = 2
 size_flags_vertical = 0
-texture = ExtResource("2_i6xaq")
+texture = ExtResource("2_irrtm")
+expand_mode = 3
 
 [node name="Hello" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/ColorRect"]
 layout_mode = 1
@@ -168,9 +175,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -360.0
-offset_top = -32.0
+offset_top = 14.0
 offset_right = 360.0
-offset_bottom = 82.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -185,6 +192,7 @@ size_flags_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_02tll")
 theme_override_font_sizes/font_size = 40
 text = "Приветствуем,"
 
@@ -195,6 +203,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_02tll")
 theme_override_font_sizes/font_size = 40
 text = "[Name]"
 
@@ -207,9 +216,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 64.0
-offset_top = 118.0
+offset_top = 175.0
 offset_right = -64.0
-offset_bottom = 568.0
+offset_bottom = 625.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -227,188 +236,44 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/VBoxContainer/Control"]
-self_modulate = Color(0.537255, 0.537255, 0.537255, 1)
+self_modulate = Color(0.537255, 0.537255, 0.537255, 0.788235)
+custom_minimum_size = Vector2(0, 132.205)
 layout_mode = 0
 offset_left = -366.0
 offset_top = 88.0
 offset_right = -6.0
-offset_bottom = 146.0
+offset_bottom = 220.205
 texture = ExtResource("2_i6xaq")
 
 [node name="inf_balls" type="Label" parent="MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 185.205
 grow_horizontal = 2
-grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_02tll")
 theme_override_font_sizes/font_size = 34
 text = "Вы получили: ball"
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 10
-
-[node name="down_panel" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -159.5
-offset_bottom = 5.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 10
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/Control/down_panel"]
-clip_contents = true
-custom_minimum_size = Vector2(720, 165.825)
-layout_mode = 2
-size_flags_vertical = 10
-texture = ExtResource("2_i6xaq")
-flip_v = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -361.0
-offset_top = -30.0675
-offset_right = 360.0
-offset_bottom = 53.9325
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 50
-
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer"]
-texture_filter = 4
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_wmkgh")
-
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/VBoxContainer/Control/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.09
-anchor_right = 0.09
-offset_left = 7.0
-offset_top = -1.0
-offset_right = 74.0
-offset_bottom = 78.0
-icon = ExtResource("4_pyhvt")
-flat = true
-expand_icon = true
+anchor_left = 0.906
+anchor_right = 0.906
+offset_left = -40.16
+offset_right = -0.160004
+offset_bottom = 40.0
+texture = ExtResource("6_yrsfj")
+expand_mode = 1
 
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_wmkgh")
-
-[node name="Shop" type="Button" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect4"]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 15.0
-offset_top = 1.0
-offset_right = 82.0
-offset_bottom = 79.0
-icon = ExtResource("5_458sv")
-flat = true
-expand_icon = true
-
-[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer"]
+[node name="Control" parent="MarginContainer/VBoxContainer2" instance=ExtResource("5_23odl")]
 layout_mode = 2
 
-[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer"]
-layout_mode = 2
+[node name="TextureRect2" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer" index="1"]
+material = SubResource("ShaderMaterial_6mmn1")
 
-[node name="Control4" type="Control" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_wmkgh")
-
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect3"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.06
-anchor_right = 0.06
-offset_left = 14.0
-offset_right = 74.0
-offset_bottom = 78.0
-icon = ExtResource("6_cotnd")
-flat = true
-expand_icon = true
-
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_wmkgh")
-
-[node name="Photo" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect5" node_paths=PackedStringArray("anim") instance=ExtResource("7_t5l0f")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -33.0
-offset_top = -45.0
-offset_right = 36.0
-offset_bottom = 28.0
+[node name="Photo" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect5" index="0" node_paths=PackedStringArray("anim")]
 anim = NodePath("../../../../../../../../AnimationPlayer")
-
-[node name="Control5" type="Control" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -76.0675
-offset_bottom = -1.0675
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-texture = ExtResource("5_fgcy5")
-
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/TextureRect"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 0
-offset_left = 11.0
-offset_top = 5.83333
-offset_right = 91.0
-offset_bottom = 85.8333
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("6_16eo2")
-
-[node name="pluse" type="Button" parent="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/TextureRect"]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 7.0
-offset_right = 67.0
-offset_bottom = 55.0
-flat = true
 
 [node name="Underdown" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
@@ -421,6 +286,6 @@ libraries = {
 [node name="Timer" type="Timer" parent="AnimationPlayer"]
 one_shot = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect4/Shop" to="." method="_on_shop_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/TextureRect/pluse" to="." method="_on_pluse_pressed"]
 [connection signal="timeout" from="AnimationPlayer/Timer" to="." method="_on_timer_timeout"]
+
+[editable path="MarginContainer/VBoxContainer2/Control"]

@@ -1,21 +1,19 @@
 extends Control
 
-@onready var nameFL = $MarginContainer/VBoxContainer/name/Name
-@onready var mail = $MarginContainer/VBoxContainer/mail/Mail
+@onready var nameFL = $MarginContainer/VBoxContainer/TextureRect/name/Name
+@onready var mail = $MarginContainer/VBoxContainer/TextureRect/mail/Mail
 @onready var animation_player = $AnimationPlayer
-@onready var ball = $MarginContainer/VBoxContainer2/Control2/ball
+@onready var ball = $MarginContainer/VBoxContainer/TextureRect/TextureRect/ball
 
 
 
 func _ready():
 	animation_player.play("start")
-	nameFL.text = Accaunt.firstName + " " + Accaunt.lastName
+	nameFL.text = Accaunt.firstName+"\n"+Accaunt.lastName
 	mail.text = Accaunt.mail
 	var val_balls = int(ball.text)  # Преобразуем текст в целое число	
-	Accaunt.balls = val_balls  # Устанавливаем значения в переменную
+	val_balls = Accaunt.balls  # Устанавливаем значения в переменную
 	ball.text = str(val_balls)  # Преобразуем целое число обратно в строку и устанавливаем в текст метки
-
-
 
 
 func _on_seting_pressed():

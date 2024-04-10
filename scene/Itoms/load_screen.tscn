@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb1ehj3f0k1cf"]
+[gd_scene load_steps=4 format=3 uid="uid://cb1ehj3f0k1cf"]
 
 [ext_resource type="Texture2D" uid="uid://crl08r6dyphih" path="res://picture/ffeb31e8-de93-44d8-b797-70fad82baa5b.png" id="1_twon3"]
+[ext_resource type="FontFile" uid="uid://blwr3mw3q5wd4" path="res://Roboto-Black.ttf" id="2_0a3ei"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7gyu3"]
 animations = [{
@@ -61,5 +62,6 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("2_0a3ei")
+theme_override_font_sizes/font_size = 35
 text = "Green Cycle"

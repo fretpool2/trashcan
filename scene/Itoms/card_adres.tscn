@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b72y1hwvaa43l"]
+[gd_scene load_steps=4 format=3 uid="uid://b72y1hwvaa43l"]
 
 [ext_resource type="Script" path="res://script/items/card_adres.gd" id="1_quteg"]
+[ext_resource type="FontFile" uid="uid://blwr3mw3q5wd4" path="res://Roboto-Black.ttf" id="2_ykhi7"]
+[ext_resource type="FontFile" uid="uid://v764fvdci7uj" path="res://Roboto-Regular.ttf" id="3_ivljq"]
 
 [node name="card_adres" type="Control"]
 layout_mode = 3
@@ -24,6 +26,7 @@ layout_mode = 0
 offset_right = 448.0
 offset_bottom = 31.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ykhi7")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -33,6 +36,7 @@ offset_top = 37.0
 offset_right = 448.0
 offset_bottom = 60.0
 theme_override_colors/font_color = Color(0.309804, 0.309804, 0.309804, 1)
+theme_override_fonts/font = ExtResource("3_ivljq")
 theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
 vertical_alignment = 1

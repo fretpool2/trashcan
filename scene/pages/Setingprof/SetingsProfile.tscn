@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfkypqauofras"]
+[gd_scene load_steps=13 format=3 uid="uid://cfkypqauofras"]
 
 [ext_resource type="Script" path="res://script/profile/SetingsProfile.gd" id="1_348tn"]
 [ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="2_rpuhi"]
-[ext_resource type="Texture2D" uid="uid://2diq4dw51q5t" path="res://picture/main_menu/white_cube2.png" id="3_6sdxd"]
-[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka.png" id="4_jnrjo"]
+[ext_resource type="Texture2D" uid="uid://b5ctikq62r40v" path="res://picture/main_menu/back_button.png" id="3_wmka5"]
+[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka_white.png" id="4_jnrjo"]
+[ext_resource type="FontFile" uid="uid://blwr3mw3q5wd4" path="res://Roboto-Black.ttf" id="5_dqi2q"]
 [ext_resource type="Texture2D" uid="uid://dngcsm4rjpmgl" path="res://picture/main_menu/people_pan.png" id="5_wmleq"]
 [ext_resource type="Texture2D" uid="uid://bvb8ef3ixfvng" path="res://picture/main_menu/otpechatok.png" id="6_disb8"]
+[ext_resource type="FontFile" uid="uid://v764fvdci7uj" path="res://Roboto-Regular.ttf" id="7_0g4vh"]
 [ext_resource type="Texture2D" uid="uid://bj3v7nabg1uhi" path="res://picture/main_menu/run.png" id="7_36dwp"]
 
 [sub_resource type="Animation" id="Animation_verrb"]
@@ -93,20 +95,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture = ExtResource("3_6sdxd")
+texture = ExtResource("3_wmka5")
+expand_mode = 2
 stretch_mode = 4
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer/TextureRect"]
 layout_mode = 0
-offset_left = 71.0
-offset_top = 62.0
-offset_right = 133.0
-offset_bottom = 124.0
+offset_left = 67.0
+offset_top = 66.0
+offset_right = 130.0
+offset_bottom = 130.0
 rotation = 3.14159
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 icon = ExtResource("4_jnrjo")
 flat = true
 icon_alignment = 2
@@ -114,6 +118,7 @@ icon_alignment = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_dqi2q")
 theme_override_font_sizes/font_size = 35
 text = "Настройки"
 horizontal_alignment = 1
@@ -142,6 +147,7 @@ expand_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.486275, 0.705882, 0.360784, 1)
+theme_override_fonts/font = ExtResource("7_0g4vh")
 theme_override_font_sizes/font_size = 24
 text = "Редактировать ФИО профиля"
 flat = true
@@ -167,6 +173,7 @@ expand_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.486275, 0.705882, 0.360784, 1)
+theme_override_fonts/font = ExtResource("7_0g4vh")
 theme_override_font_sizes/font_size = 24
 text = "Изменить пароль"
 flat = true
@@ -190,6 +197,7 @@ expand_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.486275, 0.705882, 0.360784, 1)
+theme_override_fonts/font = ExtResource("7_0g4vh")
 theme_override_font_sizes/font_size = 24
 text = "Изменить электронную почту"
 flat = true
@@ -215,6 +223,7 @@ expand_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.486275, 0.705882, 0.360784, 1)
+theme_override_fonts/font = ExtResource("7_0g4vh")
 theme_override_font_sizes/font_size = 24
 text = "Удалить аккаунт"
 flat = true

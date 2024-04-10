@@ -1,0 +1,186 @@
+[gd_scene load_steps=9 format=3 uid="uid://bg555v5g6go7h"]
+
+[ext_resource type="Script" path="res://scene/Itoms/down_panel.gd" id="1_43eao"]
+[ext_resource type="Texture2D" uid="uid://bhyqiucxj6hep" path="res://picture/main_menu/back.png" id="1_vqlwb"]
+[ext_resource type="Texture2D" uid="uid://b5ctikq62r40v" path="res://picture/main_menu/back_button.png" id="2_5aa60"]
+[ext_resource type="Texture2D" uid="uid://b6gdaht5gqh45" path="res://picture/lepistok.png" id="3_a0xsr"]
+[ext_resource type="Texture2D" uid="uid://c7vb5onjb1gy3" path="res://picture/main_menu/Packet.png" id="4_bo5ml"]
+[ext_resource type="Texture2D" uid="uid://c4q5dlsod41v6" path="res://picture/main_menu/book.png" id="5_wko7g"]
+[ext_resource type="PackedScene" uid="uid://c1ix7mdunipu4" path="res://scene/Itoms/photo.tscn" id="6_dwe4g"]
+[ext_resource type="Texture2D" uid="uid://w6s1hg8ln3jb" path="res://picture/main_menu/pluses.png" id="7_s8xui"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 10
+script = ExtResource("1_43eao")
+
+[node name="down_panel" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="TextureRect" type="TextureRect" parent="down_panel"]
+clip_contents = true
+custom_minimum_size = Vector2(720, 165.825)
+layout_mode = 2
+size_flags_vertical = 10
+texture = ExtResource("1_vqlwb")
+expand_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="down_panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -361.0
+offset_top = -30.0675
+offset_right = 360.0
+offset_bottom = 53.9325
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Control" type="Control" parent="down_panel/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="down_panel/TextureRect/HBoxContainer"]
+texture_filter = 4
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_5aa60")
+expand_mode = 2
+
+[node name="Button" type="Button" parent="down_panel/TextureRect/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09
+anchor_right = 0.09
+offset_top = -1.0
+offset_right = 81.0
+offset_bottom = 93.0
+icon = ExtResource("3_a0xsr")
+flat = true
+expand_icon = true
+
+[node name="TextureRect4" type="TextureRect" parent="down_panel/TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_5aa60")
+expand_mode = 2
+
+[node name="Shop" type="Button" parent="down_panel/TextureRect/HBoxContainer/TextureRect4"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 9.0
+offset_top = 1.0
+offset_right = 88.0
+offset_bottom = 94.0
+icon = ExtResource("4_bo5ml")
+flat = true
+expand_icon = true
+
+[node name="Control2" type="Control" parent="down_panel/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="down_panel/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="down_panel/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="down_panel/TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_5aa60")
+expand_mode = 2
+
+[node name="Button" type="Button" parent="down_panel/TextureRect/HBoxContainer/TextureRect3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06
+anchor_right = 0.06
+offset_left = 6.0
+offset_right = 79.0
+offset_bottom = 94.0
+icon = ExtResource("5_wko7g")
+flat = true
+expand_icon = true
+
+[node name="TextureRect5" type="TextureRect" parent="down_panel/TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_5aa60")
+expand_mode = 4
+
+[node name="Photo" parent="down_panel/TextureRect/HBoxContainer/TextureRect5" instance=ExtResource("6_dwe4g")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -40.0
+offset_right = 46.0
+offset_bottom = 43.0
+
+[node name="Control5" type="Control" parent="down_panel/TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="down_panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -78.9125
+offset_right = 2.0
+offset_bottom = -1.9125
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+expand_mode = 5
+flip_v = true
+
+[node name="TextureRect2" type="TextureRect" parent="down_panel/TextureRect/TextureRect"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 6.5
+offset_top = 4.5
+offset_right = 98.5
+offset_bottom = 93.5
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_s8xui")
+expand_mode = 2
+
+[node name="pluse" type="Button" parent="down_panel/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 69.0
+offset_bottom = 65.0
+flat = true
+
+[connection signal="pressed" from="down_panel/TextureRect/HBoxContainer/TextureRect2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="down_panel/TextureRect/HBoxContainer/TextureRect4/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="down_panel/TextureRect/TextureRect/pluse" to="." method="_on_pluse_pressed"]

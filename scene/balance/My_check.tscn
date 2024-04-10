@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://script/balance/My_check.gd" id="1_p3kmc"]
 [ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="2_mjopn"]
-[ext_resource type="Texture2D" uid="uid://bhhresme0lj10" path="res://picture/main_menu/pngwing.com (1).png" id="3_pj5rn"]
-[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka.png" id="4_4prdh"]
+[ext_resource type="Texture2D" uid="uid://b5ctikq62r40v" path="res://picture/main_menu/back_button.png" id="3_aujhf"]
+[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka_white.png" id="4_4prdh"]
 
 [node name="MyCheck" type="Control"]
 layout_mode = 3
@@ -53,7 +53,8 @@ offset_left = 8.0
 offset_top = 7.0
 offset_right = 73.0
 offset_bottom = 69.0
-texture = ExtResource("3_pj5rn")
+texture = ExtResource("3_aujhf")
+expand_mode = 2
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/TextureRect/TextureRect2"]
 layout_mode = 0
@@ -62,8 +63,12 @@ offset_top = 53.0
 offset_right = 119.0
 offset_bottom = 111.0
 rotation = 3.14159
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.305882, 0.305882, 0.305882, 1)
+theme_override_colors/icon_hover_color = Color(0.305882, 0.305882, 0.305882, 1)
 icon = ExtResource("4_4prdh")
 flat = true
+icon_alignment = 2
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)

@@ -1,15 +1,54 @@
-[gd_scene load_steps=8 format=3 uid="uid://mrmh677tkfm5"]
+[gd_scene load_steps=12 format=3 uid="uid://mrmh677tkfm5"]
 
 [ext_resource type="Script" path="res://script/balance/catalog.gd" id="1_t0i18"]
 [ext_resource type="PackedScene" uid="uid://b72y1hwvaa43l" path="res://scene/Itoms/card_adres.tscn" id="2_7e0eb"]
 [ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="2_nckwx"]
-[ext_resource type="Texture2D" uid="uid://2diq4dw51q5t" path="res://picture/main_menu/white_cube2.png" id="3_a75fm"]
-[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka.png" id="4_fbd3j"]
+[ext_resource type="Texture2D" uid="uid://b5ctikq62r40v" path="res://picture/main_menu/back_button.png" id="3_i2oqx"]
+[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka_white.png" id="4_fbd3j"]
 [ext_resource type="Texture2D" uid="uid://y3c0ncun5647" path="res://picture/main_menu/green_krug.png" id="5_4uaxn"]
+[ext_resource type="FontFile" uid="uid://blwr3mw3q5wd4" path="res://Roboto-Black.ttf" id="5_8ari0"]
 
 [sub_resource type="Theme" id="Theme_u8hf7"]
 
+[sub_resource type="Animation" id="Animation_aadnc"]
+resource_name = "start"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1q670"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1kfjv"]
+_data = {
+"RESET": SubResource("Animation_1q670"),
+"start": SubResource("Animation_aadnc")
+}
+
 [node name="Catalog" type="Control"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,20 +95,24 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture = ExtResource("3_a75fm")
+texture = ExtResource("3_i2oqx")
+expand_mode = 2
 stretch_mode = 4
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer/TextureRect"]
 layout_mode = 0
 offset_left = 71.0
-offset_top = 62.0
-offset_right = 133.0
-offset_bottom = 124.0
+offset_top = 67.0
+offset_right = 139.0
+offset_bottom = 134.0
 rotation = 3.14159
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_colors/icon_hover_color = Color(0.290196, 0.290196, 0.290196, 1)
 icon = ExtResource("4_fbd3j")
 flat = true
 icon_alignment = 2
@@ -77,6 +120,7 @@ icon_alignment = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_8ari0")
 theme_override_font_sizes/font_size = 35
 text = "Утилизация"
 horizontal_alignment = 1
@@ -191,6 +235,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_8ari0")
 theme_override_font_sizes/font_size = 35
 text = "Выбирете адрес"
 horizontal_alignment = 1
@@ -248,5 +293,10 @@ adress = "М.О, Красногорск, квартал Коммунальный
 
 [node name="air" type="Control" parent="ScrollContainer/VBoxContainer/HBoxContainer/adres"]
 layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1kfjv")
+}
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer/TextureRect/Exit" to="." method="_on_exit_pressed"]

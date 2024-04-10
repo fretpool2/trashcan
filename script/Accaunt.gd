@@ -7,7 +7,7 @@ var lastName = "Иванов"
 var mail = "example@example.ru"
 var signin = false
 var save_settings = "user://Accaunt.db"
-var balls = 10
+var balls = 0
 
 func save_acc_data():
 	var config = ConfigFile.new()
@@ -17,6 +17,7 @@ func save_acc_data():
 	config.set_value("lastName", "lastName", lastName)
 	config.set_value("mail", "mail", mail)
 	config.set_value("signin", "signin", signin)
+	config.set_value("balls", "balls", balls)
 	config.save(save_settings)
 	print("saving...")
 
@@ -29,6 +30,7 @@ func load_acc_data():
 		lastName = config.get_value("lastName", "lastName")
 		mail = config.get_value("mail", "mail")
 		signin = config.get_value("signin", "signin")
+		balls = config.get_value("balls", "balls")
 	else:
 		login = "Admin"
 		password = "12345678"
@@ -36,6 +38,7 @@ func load_acc_data():
 		lastName = "Иванов"
 		mail = "example@example.ru"
 		signin = false
+		var balls = 0
 
 func _ready():
 	load_acc_data()

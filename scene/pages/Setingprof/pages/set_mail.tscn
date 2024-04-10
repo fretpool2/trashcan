@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmffeuaqwrn64"]
+[gd_scene load_steps=8 format=3 uid="uid://dmffeuaqwrn64"]
 
 [ext_resource type="Script" path="res://scene/pages/Setingprof/pages/Set_mail.gd" id="1_jt6mk"]
 [ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="2_8iw1d"]
-[ext_resource type="Texture2D" uid="uid://2diq4dw51q5t" path="res://picture/main_menu/white_cube2.png" id="3_x15u4"]
-[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka.png" id="4_npfia"]
+[ext_resource type="Texture2D" uid="uid://b5ctikq62r40v" path="res://picture/main_menu/back_button.png" id="3_o8k5d"]
+[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka_white.png" id="4_npfia"]
+[ext_resource type="FontFile" uid="uid://blwr3mw3q5wd4" path="res://Roboto-Black.ttf" id="5_3ecqf"]
 [ext_resource type="Texture2D" uid="uid://xlv5ee136cka" path="res://picture/ramkavoda.png" id="5_6qufe"]
+[ext_resource type="FontFile" uid="uid://v764fvdci7uj" path="res://Roboto-Regular.ttf" id="6_h6rs7"]
 
 [node name="Set_mail" type="Control"]
 layout_mode = 3
@@ -53,20 +55,24 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture = ExtResource("3_x15u4")
+texture = ExtResource("3_o8k5d")
+expand_mode = 2
 stretch_mode = 4
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer/TextureRect"]
 layout_mode = 0
 offset_left = 71.0
-offset_top = 62.0
-offset_right = 133.0
-offset_bottom = 124.0
+offset_top = 67.0
+offset_right = 139.0
+offset_bottom = 134.0
 rotation = 3.14159
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_colors/icon_hover_color = Color(0.290196, 0.290196, 0.290196, 1)
 icon = ExtResource("4_npfia")
 flat = true
 icon_alignment = 2
@@ -74,6 +80,7 @@ icon_alignment = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_3ecqf")
 theme_override_font_sizes/font_size = 35
 text = "Редактирование Почты"
 horizontal_alignment = 1
@@ -109,6 +116,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0.294118, 0.294118, 0.294118, 1)
+theme_override_fonts/font = ExtResource("6_h6rs7")
 placeholder_text = "Введите новую почту*"
 flat = true
 
@@ -144,6 +152,7 @@ offset_right = 70.5
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_3ecqf")
 theme_override_font_sizes/font_size = 26
 text = "Сохранить"
 horizontal_alignment = 1

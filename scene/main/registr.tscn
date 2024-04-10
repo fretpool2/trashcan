@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlc4ttb3bf168"]
+[gd_scene load_steps=10 format=3 uid="uid://dlc4ttb3bf168"]
 
 [ext_resource type="Script" path="res://script/main/registr.gd" id="1_cg27n"]
+[ext_resource type="FontFile" uid="uid://blwr3mw3q5wd4" path="res://Roboto-Black.ttf" id="2_5qa4a"]
 [ext_resource type="Texture2D" uid="uid://xlv5ee136cka" path="res://picture/ramkavoda.png" id="2_befqc"]
 [ext_resource type="Texture2D" uid="uid://cwyqeytggma5b" path="res://picture/3dfbdac2-11d8-48c2-83b4-fcc37f53d4ca.png" id="2_rytnx"]
+[ext_resource type="FontFile" uid="uid://v764fvdci7uj" path="res://Roboto-Regular.ttf" id="3_pcvjy"]
 
 [sub_resource type="Animation" id="Animation_ko733"]
 length = 0.001
@@ -91,6 +93,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5qa4a")
 theme_override_font_sizes/font_size = 61
 text = "Присоединяйтесь!"
 horizontal_alignment = 1
@@ -107,6 +110,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.294118, 0.294118, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_pcvjy")
 theme_override_font_sizes/font_size = 16
 text = "Войдите в систему, чтобы получить доступ к приложению
 "
@@ -155,6 +159,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0.294118, 0.294118, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_pcvjy")
 placeholder_text = "Имя*"
 flat = true
 
@@ -174,6 +179,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0.294118, 0.294118, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_pcvjy")
 placeholder_text = "Фамилия*"
 flat = true
 
@@ -193,6 +199,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0.294118, 0.294118, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_pcvjy")
 placeholder_text = "Логин*"
 flat = true
 
@@ -212,6 +219,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0.294118, 0.294118, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_pcvjy")
 placeholder_text = "Электронная почта*"
 virtual_keyboard_type = 5
 flat = true
@@ -232,6 +240,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0.294118, 0.294118, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_pcvjy")
 placeholder_text = "Пароль*"
 flat = true
 
@@ -251,6 +260,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0.294118, 0.294118, 0.294118, 1)
+theme_override_fonts/font = ExtResource("3_pcvjy")
 placeholder_text = "Повторите пароль*"
 flat = true
 
@@ -288,6 +298,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.294118, 0.294118, 0.294118, 1)
 theme_override_colors/font_hover_color = Color(0.317647, 0.454902, 0.258824, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.454902, 0.258824, 1)
+theme_override_fonts/font = ExtResource("3_pcvjy")
 theme_override_font_sizes/font_size = 20
 text = "У вас уже есть аккаунт?
  Войдите здесь!"

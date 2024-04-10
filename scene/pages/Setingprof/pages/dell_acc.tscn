@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2ns7l58n50si"]
+[gd_scene load_steps=8 format=3 uid="uid://d2ns7l58n50si"]
 
 [ext_resource type="Texture2D" uid="uid://c8fdixfqjonoe" path="res://picture/main_menu/Green_line.png" id="1_v2jko"]
 [ext_resource type="Script" path="res://scene/pages/Setingprof/pages/dell_acc.gd" id="1_vd3go"]
-[ext_resource type="Texture2D" uid="uid://2diq4dw51q5t" path="res://picture/main_menu/white_cube2.png" id="2_3ww8k"]
-[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka.png" id="3_gwr73"]
+[ext_resource type="Texture2D" uid="uid://b5ctikq62r40v" path="res://picture/main_menu/back_button.png" id="3_0tlqp"]
+[ext_resource type="Texture2D" uid="uid://csvoif6l7j3qu" path="res://picture/main_menu/strelka_white.png" id="3_gwr73"]
+[ext_resource type="FontFile" uid="uid://blwr3mw3q5wd4" path="res://Roboto-Black.ttf" id="5_j53ji"]
 [ext_resource type="Texture2D" uid="uid://y3c0ncun5647" path="res://picture/main_menu/green_krug.png" id="5_pe8ci"]
 
 [sub_resource type="Theme" id="Theme_teyrb"]
@@ -55,20 +56,24 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture = ExtResource("2_3ww8k")
+texture = ExtResource("3_0tlqp")
+expand_mode = 2
 stretch_mode = 4
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer/TextureRect"]
 layout_mode = 0
 offset_left = 71.0
-offset_top = 62.0
-offset_right = 133.0
-offset_bottom = 124.0
+offset_top = 67.0
+offset_right = 139.0
+offset_bottom = 134.0
 rotation = 3.14159
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_colors/icon_hover_color = Color(0.290196, 0.290196, 0.290196, 1)
 icon = ExtResource("3_gwr73")
 flat = true
 icon_alignment = 2
@@ -76,6 +81,7 @@ icon_alignment = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control/VBoxContainer/TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_j53ji")
 theme_override_font_sizes/font_size = 35
 text = "Удаление аккаунт"
 horizontal_alignment = 1
@@ -126,6 +132,7 @@ offset_right = 70.5
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_j53ji")
 theme_override_font_sizes/font_size = 26
 text = "Удалить аккаунт"
 horizontal_alignment = 1
