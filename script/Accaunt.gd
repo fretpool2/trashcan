@@ -38,7 +38,7 @@ func load_acc_data():
 		lastName = "Иванов"
 		mail = "example@example.ru"
 		signin = false
-		var balls = 0
+		balls = 0
 
 func _ready():
 	load_acc_data()

@@ -110,7 +110,7 @@ size_flags_vertical = 4
 texture = ExtResource("2_5aa60")
 expand_mode = 2
 
-[node name="Button" type="Button" parent="down_panel/TextureRect/HBoxContainer/TextureRect3"]
+[node name="buck" type="Button" parent="down_panel/TextureRect/HBoxContainer/TextureRect3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.06

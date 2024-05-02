@@ -13,7 +13,7 @@ func _ready():
 	names.text = Ifotrash.names
 	adres.text = Ifotrash.adres
 
-func _process(delta):
+func _process(_delta):
 	if texture.texture != null:
 		next.disabled = false
 		pass
@@ -39,3 +39,4 @@ func _on_next_pressed():
 	Accaunt.save_acc_data()
 	get_tree().change_scene_to_file("res://scene/pages/MainMenu/main_menu.tscn")
 	Globals.add_bals = true
+	Globals.add_bals_card = true

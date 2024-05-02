@@ -286,6 +286,7 @@ libraries = {
 [node name="Timer" type="Timer" parent="AnimationPlayer"]
 one_shot = true
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Control/down_panel/TextureRect/HBoxContainer/TextureRect3/buck" to="MarginContainer/VBoxContainer2/Control" method="_on_buck_pressed"]
 [connection signal="timeout" from="AnimationPlayer/Timer" to="." method="_on_timer_timeout"]
 
 [editable path="MarginContainer/VBoxContainer2/Control"]

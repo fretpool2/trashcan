@@ -13,3 +13,7 @@ func _on_pluse_pressed():
 
 func _on_shop_pressed():
 	get_tree().change_scene_to_file("res://scene/pages/shop/shop.tscn")
+
+
+func _on_buck_pressed():
+	get_tree().change_scene_to_file("res://scene/Itoms/card_history.tscn")
